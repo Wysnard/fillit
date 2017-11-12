@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
-# include <stdint.h>
 
 typedef struct		s_list
 {
@@ -137,17 +136,13 @@ char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
 void				ft_strrev(char *s);
 char				*ft_utoa(unsigned int nbr, char const *base_chr);
 char				*ft_dtoa(double nbr, size_t	size);
-char				*ft_imtoa_base(intmax_t nbr, char *base_to);
 void				ft_print_bits(unsigned int octet, int size);
 void				ft_putwchar_fd(wchar_t chr, int fd);
 void				ft_putwstr_fd(wchar_t const *str, int fd);
 void				ft_putwchar(wchar_t chr);
 void				ft_putwstr(wchar_t const *str);
-intmax_t			ft_atoim(const char *str);
 char				*ft_strtrijoin(char *s1, char *s2, char *s3);
 int					ft_intlen(int nb, int base);
 void				ft_swap(void **s1, void **s2);
-size_t			ft_strchri(char *str, int c);
-char				*ft_strcdup(char *str, int c);
 
 #endif

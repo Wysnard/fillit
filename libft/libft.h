@@ -136,7 +136,6 @@ char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
 void				ft_strrev(char *s);
 char				*ft_utoa(unsigned int nbr, char const *base_chr);
 char				*ft_dtoa(double nbr, size_t	size);
-char				*ft_imtoa_base(intmax_t nbr, char *base_to);
 void				ft_print_bits(unsigned int octet, int size);
 void				ft_putwchar_fd(wchar_t chr, int fd);
 void				ft_putwstr_fd(wchar_t const *str, int fd);
