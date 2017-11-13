@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 			ft_putstr_fd("Error\n", 2);
 		tetris = (t_etris *)list->content;
 		ft_bitaddtotab(map, tetris, 0);
-		ft_putstr(map);
+		ft_print_bits(map, 32);
 		ft_lstdelall(&list);
 	}
 	return (1);
