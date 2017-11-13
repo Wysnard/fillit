@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 			ft_putstr_fd("Error\n", 2);
 		tetris = (t_etris *)list->content;
 		place = (char)tetris->tetrimino;
-		*map |= place;
+		map[0] = map[0] | place;
 		//ft_placetetris(map, tetris->tetrimino, 0);
 		//ft_bitaddtotab(map, 1, 0);
 		ft_print_bits(map[0], 8);
