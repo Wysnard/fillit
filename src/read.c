@@ -1,28 +1,28 @@
 #include "fillit.h"
 
-int	ft_read(int fd, t_list *list)
+size_t	ft_read(int fd, t_list **list)
 {
 	int	ret;
+	size_t	max;
 	unsigned short	c;
 	char	buf[BUFF_SIZE + 1];
 	t_etris	*tetris;
 
-	list = NULL;
 	c = 0;
+	max = 0;
 	while ((ret = read(fd, buf, BUFF_SIZE)))
 	{
 		buf[ret] = '\0';
-		if (!(c = ft_standard(ft_registerbits(buf))))
+		if (!(c = ft_standard(ft_registerbits(buf))) ||
+			!(tetris = ft_tetrimino(c))) /*||
+			(((tetris->hl & 15) + (tetris->hl >> 4) != 5 && tetris->hl != 51)))*/
 			return (0);
-		tetris = ft_tetrimino(c);
-		if (tetris->height + tetris->length != 5 &&
-			!(tetris->height == 2 && tetris->length == 2))
-			return (0);
-		ft_lstpushadd(&list, ft_lstnew(tetris, sizeof(t_etris)));
-		ft_print_bits(c, 16);
+		ft_lstpushadd(list, ft_lstnew(tetris, sizeof(t_etris)));
+		max += 1;
+		/*ft_print_bits(c, 16);
 		ft_putchar('\n');
 		ft_printtetris(c);
-		ft_putchar('\n');
+		ft_putchar('\n');*/
 	}
-	return (1);
+	return (max);
 }
