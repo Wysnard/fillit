@@ -4,7 +4,7 @@
 int	main(int argc, char **argv)
 {
 	t_list	*list;
-	char	map[14];
+	//char	map[14];
 	int	fd;
 	t_etris	*tetris;
 
@@ -12,7 +12,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		fd = open(argv[1], O_RDONLY);
-		ft_bzero(map, 13);
+		//ft_bzero(map, 13);
 		if (!(ft_read(fd, list)))
 			ft_putstr_fd("Error\n", 2);
 		tetris = (t_etris *)list->content;
