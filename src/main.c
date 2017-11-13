@@ -16,8 +16,8 @@ int	main(int argc, char **argv)
 		if (!(ft_read(fd, list)))
 			ft_putstr_fd("Error\n", 2);
 		tetris = (t_etris *)list->content;
-		ft_bitaddtotab(map, tetris, 0);
-		ft_print_bits(*map, 8);
+		//ft_bitaddtotab(map, tetris, 0);
+		//ft_print_bits(*map, 8);
 		ft_lstdelall(&list);
 	}
 	return (1);
