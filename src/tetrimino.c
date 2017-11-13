@@ -16,6 +16,10 @@ void	ft_printtetris(unsigned char c)
 			ft_putchar('\n');
 		i -= 1;
 	}
+	if (c & (1 << i))
+		ft_putnbr('1');
+	else
+		ft_putchar('0');
 }
 
 void	ft_lstprtbits(t_list *list)

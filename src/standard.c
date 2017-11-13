@@ -6,17 +6,17 @@ unsigned char	ft_bitsrotate(unsigned short c)
 
 	rotate = 0;
 	if (c == 34952)
-		rotate = 240;
+		rotate = 241;
 	else if (c == 19520)
-		rotate = 232;
+		rotate = 233;
 	else if (c == 17600)
-		rotate = 226;
+		rotate = 227;
 	else if (c == 35968)
-		rotate = 78;
+		rotate = 79;
 	else if (c == 35904)
-		rotate = 108;
+		rotate = 109;
 	else if (c == 19584)
-		rotate = 198;
+		rotate = 199;
 	else
 		rotate = (c >> 8);
 	return (rotate);
