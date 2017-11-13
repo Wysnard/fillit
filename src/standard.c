@@ -9,13 +9,13 @@ unsigned char	ft_bitsrotate(unsigned short c)
 		rotate = 241;
 	else if (c == 0b100110001000000)
 		rotate = 233;
-	else if (c == 100010011000000)
+	else if (c == 0b100010011000000)
 		rotate = 227;
-	else if (c == 1000110010000000)
+	else if (c == 0b1000110010000000)
 		rotate = 79;
-	else if (c == 1000110001000000)
+	else if (c == 0b1000110001000000)
 		rotate = 109;
-	else if (c == 100110010000000)
+	else if (c == 0b100110010000000)
 		rotate = 199;
 	else
 		rotate = (c >> 8);
