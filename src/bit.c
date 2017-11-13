@@ -3,7 +3,7 @@
 void	ft_bitaddtotab(char *map, short unsigned bit, size_t at)
 {
 	if (bit)
-		map[at / 8] |= 128  >> (at & 7);
+		map[at / 8] |= 128 >> (at & 7);
 	else
 		map[at / 8] &= ~(128 >> (at & 7));
 }
@@ -11,11 +11,13 @@ void	ft_bitaddtotab(char *map, short unsigned bit, size_t at)
 void	ft_placetetris(char *map, unsigned short int tetrimino, size_t at)
 {
 	size_t	i;
+	short unsigned bit;
 
 	i = 0;
 	while (i < 8)
 	{
-		ft_bitaddtotab(map, ((tetrimino >> i) & 128), at);
+		bit = ((tetrimino >> i) & 128) ? 1 : 0;
+		ft_bitaddtotab(map, bit, at);
 		i += 1;
 		at += 1;
 	}
