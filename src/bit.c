@@ -8,7 +8,7 @@ void	ft_bitaddtotab(char *map, short unsigned bit, size_t at)
 		map[at / 8] &= ~(128 >> (at & 7));
 }
 
-void	ft_placetetris(char *map, unsigned short int tetrimino, size_t at)
+/*void	ft_placetetris(char *map, unsigned short int tetrimino, size_t at)
 {
 	size_t	i;
 
@@ -19,7 +19,7 @@ void	ft_placetetris(char *map, unsigned short int tetrimino, size_t at)
 		i += 1;
 		at += 1;
 	}
-}
+}*/
 
 unsigned short	ft_registerbits(char *buf)
 {

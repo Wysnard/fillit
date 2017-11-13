@@ -13,18 +13,20 @@
 typedef	struct	s_etris
 {
 	unsigned short	tetrimino;
-	char	hl;
+	char					hl;
 }							t_etris;
 
 size_t	ft_read(int fd, t_list **list);
 unsigned short	ft_registerbits(char *buf);
 t_etris	*ft_tetrimino(unsigned short int c);
 unsigned	short	ft_standard(unsigned short c);
-void	ft_printtetris(unsigned short c);
-void	ft_heightlength(unsigned short c, char *hl);
+void		ft_printtetris(unsigned short c);
+void		ft_heightlength(unsigned short c, char *hl);
 void	ft_bitaddtotab(char *map, short unsigned bit, size_t at);
 void	ft_placetetris(char *map, unsigned short int tetrimino, size_t at);
-void	ft_lstprtbits(t_list *list);
+void		ft_lstprtbits(t_list *list);
 unsigned char	ft_bitsrotate(unsigned short c);
+int		ft_solve(t_list *list, char *map, size_t max);
+void		ft_tabprintbit(char *map, size_t base);
 
 #endif

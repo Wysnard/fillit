@@ -8,7 +8,9 @@ int	main(int argc, char **argv)
 	int	fd;
 	t_etris	*tetris;
 	size_t	max;
+	size_t	i;
 
+	i = 0;
 	list = NULL;
 	if (argc == 2)
 	{
@@ -19,17 +21,19 @@ int	main(int argc, char **argv)
 		if (!list)
 			return (0);
 		ft_lstiter(list, &ft_lstprtbits);
+		//ft_solve(list, map, max);
 		tetris = (t_etris *)list->content;
-		ft_print_bits(198, 8);
+		//ft_print_bits(198, 8);
 		//ft_placetetris(map, tetris->tetrimino, 0);
-		//ft_bitaddtotab(map, 1, 20);
-		//ft_bitaddtotab(map, 1, 2);
-		//ft_bitaddtotab(map, 1, 10);
-		/*ft_print_bits(map[0], 8);
+		ft_bitaddtotab(map, 1, 20);
+		ft_bitaddtotab(map, 1, 2);
+		ft_bitaddtotab(map, 1, 10);
+		ft_print_bits(map[0], 8);
 		ft_putchar('\n');
 		ft_print_bits(map[1], 8);
 		ft_putchar('\n');
-		ft_print_bits(map[2], 8);*/
+		ft_print_bits(map[2], 8);
+		//ft_tabprintbit(map, max);
 		//ft_lstdelall(&list);
 	}
 	return (1);

@@ -14,7 +14,9 @@ SRC_NAME =  main.c \
             read.c \
 						bit.c \
 						tetrimino.c \
-						standard.c
+						standard.c \
+						solve.c \
+						print.c
 
 CC = gcc
 

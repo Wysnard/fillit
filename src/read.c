@@ -24,5 +24,5 @@ size_t	ft_read(int fd, t_list **list)
 		ft_printtetris(c);
 		ft_putchar('\n');*/
 	}
-	return (max);
+	return (ft_sqr(max * 4));
 }
