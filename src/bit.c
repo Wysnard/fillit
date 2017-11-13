@@ -7,7 +7,7 @@ void	ft_bitaddtotab(char *map, t_etris *tetris, size_t at)
 	i = 0;
 	while (i < 8)
 	{
-		map[at / 8] |= ((tetris->tetrimino << i) & 1) << (at & 7);
+		map[at / 8] |= 1 << (at & 7);
 		i += 1;
 		at += 1;
 	}
