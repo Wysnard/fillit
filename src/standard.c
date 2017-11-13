@@ -3,7 +3,18 @@
 unsigned char	ft_bitsrotate(unsigned short c)
 {
 	unsigned char	rotate;
+	/*size_t	l;
+	size_t	h;
+	size_t	i;
 
+	i = 0;
+	l = hl & 15;
+	h = hl >> 4;
+	rotate = 0;
+	while (i < 16)
+	{
+
+	}*/
 	rotate = 0;
 	if (c == 34952)
 		rotate = 240;
@@ -18,7 +29,7 @@ unsigned char	ft_bitsrotate(unsigned short c)
 	else if (c == 19584)
 		rotate = 198;
 	else
-		rotate = (char)(c >> 8);
+		rotate = (c >> 8);
 	return (rotate);
 }
 

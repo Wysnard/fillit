@@ -39,7 +39,7 @@ t_etris	*ft_tetrimino(unsigned short int c)
 
 	if (!(tetris = malloc(sizeof(*tetris))) || !c)
 		return (NULL);
-	tetris->tetrimino = (c >> 4);
 	ft_heightlength(c, &tetris->hl);
+	tetris->tetrimino = ft_bitsrotate(c);
 	return (tetris);
 }
