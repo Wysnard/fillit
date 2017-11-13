@@ -1,5 +1,18 @@
 #include "fillit.h"
 
+void	ft_bitaddtotab(char *map, t_etris *tetris, size_t at)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < 16)
+	{
+		map[at / 8] |= (tetris->tetrimino << i) << (at & 7);
+		i += 1;
+		at += 1;
+	}
+}
+
 unsigned short	ft_registerbits(char *buf)
 {
 	unsigned short	c;
