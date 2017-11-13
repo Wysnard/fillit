@@ -3,9 +3,9 @@
 void	ft_bitaddtotab(char *map, short unsigned bit, size_t at)
 {
 	if (bit)
-		map[at / 8] |= 1 << (8 - (at - 1));
+		map[at / 8] |= 1 >> (at & 7);
 	else
-		map[at / 8] &= ~(1 << (8 - (at - 1)));
+		map[at / 8] &= ~(1 >> (at & 7));
 }
 
 unsigned short	ft_registerbits(char *buf)
