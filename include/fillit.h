@@ -19,6 +19,6 @@ t_etris	*ft_tetrimino(unsigned short int c);
 unsigned	short	ft_standard(unsigned short c);
 void	ft_printtetris(unsigned short c);
 void	ft_heightlength(unsigned short c, char *height, char *length);
-void	ft_bitaddtotab(char *map, t_etris *tetris);
+void	ft_bitaddtotab(char *map, t_etris *tetris, size_t at);
 
 #endif
