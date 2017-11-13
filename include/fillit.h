@@ -20,5 +20,6 @@ unsigned	short	ft_standard(unsigned short c);
 void	ft_printtetris(unsigned short c);
 void	ft_heightlength(unsigned short c, char *height, char *length);
 void	ft_bitaddtotab(char *map, short unsigned bit, size_t at);
+void	ft_placetetris(char *map, unsigned short int tetrimino, size_t at);
 
 #endif
