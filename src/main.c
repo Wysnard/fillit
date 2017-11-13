@@ -12,7 +12,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		fd = open(argv[1], O_RDONLY);
-		ft_bzero(map, 14);
+		ft_bzero(map, 13);
 		if (!(ft_read(fd, list)))
 			ft_putstr_fd("Error\n", 2);
 		tetris = (t_etris *)list->content;
