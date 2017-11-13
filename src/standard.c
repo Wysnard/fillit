@@ -22,7 +22,7 @@ unsigned char	ft_bitsrotate(unsigned short c)
 	return (rotate);
 }
 
-void	ft_heightlength(unsigned short c, char *hl)
+void	ft_heightlength(unsigned short c, unsigned char *hl)
 {
 	size_t	i;
 

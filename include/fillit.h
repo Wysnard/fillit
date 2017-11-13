@@ -12,8 +12,8 @@
 
 typedef	struct	s_etris
 {
-	unsigned short	tetrimino;
-	char					hl;
+	unsigned char		tetrimino;
+	unsigned char					hl;
 }							t_etris;
 
 size_t	ft_read(int fd, t_list **list);
