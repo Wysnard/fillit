@@ -27,7 +27,7 @@ void	ft_lstprtbits(t_list *list)
 	//ft_print_bits(tetris->hl >> 4, 4);
 	printf("height = %d\n", tetris->hl >> 4);
 	printf("length = %d\n", tetris->hl & 15);
-	ft_print_bits(tetris->tetrimino, 16);
+	ft_print_bits(tetris->tetrimino, 8);
 	ft_putchar('\n');
 	ft_printtetris(tetris->tetrimino);
 	ft_putchar('\n');
