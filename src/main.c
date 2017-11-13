@@ -7,6 +7,7 @@ int	main(int argc, char **argv)
 	char	map[14];
 	int	fd;
 	t_etris	*tetris;
+	char place;
 
 	list = NULL;
 	if (argc == 2)
@@ -16,7 +17,9 @@ int	main(int argc, char **argv)
 		if (!(ft_read(fd, list)))
 			ft_putstr_fd("Error\n", 2);
 		tetris = (t_etris *)list->content;
-		ft_placetetris(map, tetris->tetrimino, 0);
+		place = (char)tetris->tetrimino;
+		*map |= place;
+		//ft_placetetris(map, tetris->tetrimino, 0);
 		//ft_bitaddtotab(map, 1, 0);
 		ft_print_bits(map[0], 8);
 		//ft_lstdelall(&list);
