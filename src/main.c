@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 		//map[0] = map[0] | place;
 		//ft_placetetris(map, tetris->tetrimino, 0);
 		//ft_bitaddtotab(map, 1, 0);
-		ft_print_bits(map[1], 8);
+		ft_print_bits(map[0], 8);
 		//ft_lstdelall(&list);
 	}
 	return (1);
