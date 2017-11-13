@@ -1,12 +1,12 @@
 #include "fillit.h"
 #include <stdio.h>
 
-void	ft_printtetris(unsigned short c)
+void	ft_printtetris(unsigned char c)
 {
 	int	i;
 
-	i = 15;
-	while (i >= 0)
+	i = 7;
+	while (i > 0)
 	{
 		if (c & (1 << i))
 			ft_putchar('#');

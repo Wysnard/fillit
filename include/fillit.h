@@ -20,7 +20,7 @@ size_t	ft_read(int fd, t_list **list);
 unsigned short	ft_registerbits(char *buf);
 t_etris	*ft_tetrimino(unsigned short int c);
 unsigned	short	ft_standard(unsigned short c);
-void		ft_printtetris(unsigned short c);
+void	ft_printtetris(unsigned char c);
 void	ft_heightlength(unsigned short c, unsigned char *hl);
 void	ft_bitaddtotab(char *map, short unsigned bit, size_t at);
 void	ft_placetetris(char *map, unsigned short int tetrimino, size_t at);
