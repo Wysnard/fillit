@@ -17,7 +17,7 @@ void	ft_printtetris(unsigned char c)
 		i -= 1;
 	}
 	if (c & (1 << i))
-		ft_putnbr('1');
+		ft_putchar('1');
 	else
 		ft_putchar('0');
 }

@@ -19,9 +19,9 @@ size_t	ft_read(int fd, t_list **list)
 			return (0);
 		ft_lstpushadd(list, ft_lstnew(tetris, sizeof(t_etris)));
 		max += 1;
-		/*ft_print_bits(c, 16);
+		ft_print_bits(c, 16);
 		ft_putchar('\n');
-		ft_printtetris(c);
+		/*ft_printtetris(c);
 		ft_putchar('\n');*/
 	}
 	return (ft_sqr(max * 4));
