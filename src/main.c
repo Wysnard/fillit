@@ -6,11 +6,9 @@ int	main(int argc, char **argv)
 	t_list	*list;
 	char	map[14];
 	int	fd;
-	t_etris	*tetris;
+	//t_etris	*tetris;
 	size_t	max;
-	size_t	i;
 
-	i = 0;
 	list = NULL;
 	if (argc == 2)
 	{
@@ -22,7 +20,7 @@ int	main(int argc, char **argv)
 			return (0);
 		ft_lstiter(list, &ft_lstprtbits);
 		//ft_solve(list, map, max);
-		tetris = (t_etris *)list->content;
+		//tetris = (t_etris *)list->content;
 		//ft_print_bits(198, 8);
 		//ft_placetetris(map, tetris->tetrimino, 0);
 		ft_bitaddtotab(map, 1, 20);
