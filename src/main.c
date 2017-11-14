@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 			ft_putstr_fd("Error\n", 2);
 		if (!list)
 			return (0);
-		printf("MAX = %d\n", max);
+		printf("MAX = %lu\n", max);
 		ft_lstiter(list, &ft_lstprtbits);
 		//ft_solve(list, map, max);
 		tetris = (t_etris *)list->content;
