@@ -2,7 +2,7 @@
 
 void	ft_bitaddtotab(char *map, unsigned short int tetrimino, size_t at)
 {
-	if (bit)
+	if (tetrimino)
 		map[at / 8] |= 128 >> (at & 7);
 	else
 		map[at / 8] &= ~(128 >> (at & 7));
