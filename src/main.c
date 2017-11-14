@@ -5,7 +5,7 @@ int	main(int argc, char **argv)
 	t_list	*list;
 	char	map[14];
 	int	fd;
-	//t_etris	*tetris;
+	t_etris	*tetris;
 	size_t	max;
 
 	list = NULL;
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 		//ft_solve(list, map, max);
 		tetris = (t_etris *)list->content;
 		//ft_print_bits(198, 8);
-		ft_placetetris(map, tetris->tetrimino, 0);
+		ft_placetetris(map, tetris->tetrimino, 0, max);
 		//ft_bitaddtotab(map, 1, 20);
 		//ft_bitaddtotab(map, 1, 2);
 		//ft_bitaddtotab(map, 1, 10);
