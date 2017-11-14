@@ -17,6 +17,9 @@ unsigned char	ft_bitsrotate(unsigned short c)
 		rotate = 0b1101101;
 	else if (c == 0b100110010000000)
 		rotate = 0b11000111;
+	else if (c == 0b1100100001000000)
+		rotate = 0b10001111;
+
 	else
 		rotate = (c >> 8);
 	return (rotate);
@@ -39,6 +42,8 @@ unsigned	short	ft_bitsrerotate(unsigned char c)
 		rotate = 0b1000110001000000;
 	else if (c == 0b11000111)
 		rotate = 0b100110010000000;
+	else if (c == 0b10001111)
+		rotate = 0b1100100001000000;
 	else
 		rotate <<= 8;
 	return (rotate);
