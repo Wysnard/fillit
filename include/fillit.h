@@ -28,5 +28,6 @@ void		ft_lstprtbits(t_list *list);
 unsigned char	ft_bitsrotate(unsigned short c);
 int		ft_solve(t_list *list, char *map, size_t max);
 void		ft_tabprintbit(char *map, size_t base);
+unsigned	short	ft_bitsrerotate(unsigned char c);
 
 #endif

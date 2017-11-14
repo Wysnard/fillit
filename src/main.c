@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 		//ft_solve(list, map, max);
 		tetris = (t_etris *)list->content;
 		//ft_print_bits(198, 8);
-		ft_placetetris(map, tetris->tetrimino, 0, max);
+		ft_placetetris(map, ft_bitsrerotate(tetris->tetrimino), 0, max);
 		//ft_bitaddtotab(map, 1, 20);
 		//ft_bitaddtotab(map, 1, 2);
 		//ft_bitaddtotab(map, 1, 10);

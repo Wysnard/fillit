@@ -22,6 +22,28 @@ unsigned char	ft_bitsrotate(unsigned short c)
 	return (rotate);
 }
 
+unsigned	short	ft_bitsrerotate(unsigned char c)
+{
+	unsigned	short	rotate;
+
+	rotate = c;
+	if (c == 0b11110001)
+		rotate = 0b1000100010001000;
+	else if (c == 0b11101001)
+		rotate = 0b100110001000000;
+	else if (c == 0b11100011)
+		rotate = 0b100010011000000;
+	else if (c == 0b1001111)
+		rotate = 0b1000110010000000;
+	else if (c == 0b1101101)
+		rotate = 0b1000110001000000;
+	else if (c == 0b11000111)
+		rotate = 0b100110010000000;
+	else
+		rotate <<= 8;
+	return (rotate);
+}
+
 void	ft_heightlength(unsigned short c, unsigned char *hl)
 {
 	size_t	i;
