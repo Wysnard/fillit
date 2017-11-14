@@ -11,10 +11,8 @@ void	ft_bitaddtotab(char *map, unsigned short int tetrimino, size_t at)
 void	ft_placetetris(char *map, unsigned char tetrimino, size_t at, size_t max)
 {
 	size_t	i;
-	unsigned short	tmp;
 
 	i = 0;
-	tmp = tetrimino;
 	while (i < 16)
 	{
 		ft_bitaddtotab(map, 1, at);
