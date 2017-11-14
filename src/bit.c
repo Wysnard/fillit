@@ -13,6 +13,7 @@ void	ft_placetetris(char *map, unsigned char tetrimino, size_t at, size_t max)
 	size_t	i;
 
 	i = 0;
+	(void)tetrimino;
 	while (i < 16)
 	{
 		ft_bitaddtotab(map, 1, at);
