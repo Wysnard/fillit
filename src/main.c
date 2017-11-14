@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 		//ft_bitaddtotab(map, 1, 17);
 		//ft_bitaddtotab(map, 1, 10);
 		//ft_print_bits(ft_bitsrerotate(tetris->tetrimino), 15);
-		ft_solve(list, map, max);
+		//ft_solve(list, map, max);
 		while (i < max)
 		{
 			ft_printnbits(map[i], 15, max);
