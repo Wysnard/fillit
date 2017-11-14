@@ -8,15 +8,16 @@ void	ft_bitaddtotab(char *map, unsigned short int tetrimino, size_t at)
 		map[at / 8] &= ~(128 >> (at & 7));
 }
 
-void	ft_placetetris(char *map, unsigned char tetrimino, size_t at, size_t max)
+void	ft_placetetris(char *map, unsigned short tetrimino, size_t at, size_t max)
 {
 	size_t	i;
 
 	i = 0;
-	(void)tetrimino;
+	tetrimino <<= 7;
 	while (i < 16)
 	{
-		ft_bitaddtotab(map, 1, at);
+		if ((tetrimino << i) & FIRSTBIT)
+			ft_bitaddtotab(map, 1, at);
 		i += 1;
 		if (!(i % 4))
 			at += max;
