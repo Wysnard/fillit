@@ -20,7 +20,7 @@ void	ft_placetetris(char *map, unsigned char tetrimino, size_t at, size_t max)
 		ft_bitaddtotab(map, ((((tmp << i) & (1 << 7))) << 7) & FIRSTBIT , at);
 		i += 1;
 		if (!(i % 4))
-			at += 4;
+			at = max * (i / 4);
 		else
 			at += 1;
 	}
