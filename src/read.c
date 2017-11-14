@@ -17,7 +17,7 @@ size_t	ft_read(int fd, t_list **list)
 			!(tetris = ft_tetrimino(c))) /*||
 			(((tetris->hl & 15) + (tetris->hl >> 4) != 5 && tetris->hl != 51)))*/
 			return (0);
-		ft_print_bits(c, sizeof(c));
+		ft_print_bits(c, 15);
 		ft_putchar('\n');
 		ft_lstpushadd(list, ft_lstnew(tetris, sizeof(t_etris)));
 		max += 1;

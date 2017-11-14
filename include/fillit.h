@@ -29,5 +29,6 @@ unsigned char	ft_bitsrotate(unsigned short c);
 int		ft_solve(t_list *list, unsigned short *map, size_t max);
 unsigned	short	ft_bitsrerotate(unsigned char c);
 void	ft_tabprintbit(unsigned short *map, size_t max);
+int	ft_fit_in(unsigned short *map, unsigned short tetrimino, size_t at, size_t max);
 
 #endif

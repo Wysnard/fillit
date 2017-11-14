@@ -9,11 +9,11 @@ int	ft_fit_in(unsigned short *map, unsigned short tetrimino, size_t at, size_t m
 	pos = at;
 	while (i < 16)
 	{
-		if ((tetrimino << i) & FIRSTBIT && map[pos / 8] & 128)
+		if ((tetrimino << i) & FIRSTBIT && map[pos / 16] & (FIRSTBIT >> (pos & 15)))
 			return (0);
 		i += 1;
 		if (!(i & 3))
-			pos += max;
+			pos += 13;
 		else
 			pos += 1;
 	}
@@ -21,18 +21,18 @@ int	ft_fit_in(unsigned short *map, unsigned short tetrimino, size_t at, size_t m
 	return(1);
 }
 
-/*int	ft_solve(t_list *list, unsigned short *map, size_t max)
+int	ft_solve(t_list *list, unsigned short *map, size_t max)
 {
 	size_t	i;
 	t_etris	*tetris;
-	char	save[14];
+	unsigned	short	save[14];
 	size_t	maximum;
 
 	if (!list)
 		return (1);
 	i = 0;
-	maximum = max * 4;
-	ft_strcpy(save, map);
+	maximum = max * max;
+	ft_uscpy(save, map, max);
 	tetris = (t_etris *)list->content;
 	while (i < maximum)
 	{
@@ -41,11 +41,9 @@ int	ft_fit_in(unsigned short *map, unsigned short tetrimino, size_t at, size_t m
 			if (ft_solve(list->next, map, max))
 				return (1);
 			else
-			{
-				ft_strcpy(map, save);
-			}
+				ft_uscpy(map, save, max);
 		}
 		i += 1;
 	}
 	return (0);
-}*/
+}

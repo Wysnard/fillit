@@ -141,6 +141,9 @@ char				*ft_strtrijoin(char *s1, char *s2, char *s3);
 int					ft_intlen(int nb, int base);
 void				ft_swap(void **s1, void **s2);
 size_t				ft_sqr(int	nb);
-void				ft_printnbits(unsigned long long int octet, size_t size, size_t len);
+void				ft_printnbits(unsigned long long int octet,
+						size_t size, size_t len);
+unsigned short						*ft_uscpy(unsigned short *dest,
+												unsigned short *src, size_t len);
 
 #endif

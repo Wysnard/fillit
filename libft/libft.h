@@ -6,7 +6,7 @@
 /*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 17:06:53 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/10 17:21:07 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/14 21:49:43 by vlay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,13 +137,12 @@ void				ft_strrev(char *s);
 char				*ft_utoa(unsigned int nbr, char const *base_chr);
 char				*ft_dtoa(double nbr, size_t	size);
 void				ft_print_bits(unsigned long long int octet, size_t size);
-void				ft_putwchar_fd(wchar_t chr, int fd);
-void				ft_putwstr_fd(wchar_t const *str, int fd);
-void				ft_putwchar(wchar_t chr);
-void				ft_putwstr(wchar_t const *str);
 char				*ft_strtrijoin(char *s1, char *s2, char *s3);
 int					ft_intlen(int nb, int base);
 void				ft_swap(void **s1, void **s2);
 size_t				ft_sqr(int	nb);
+void				ft_printnbits(unsigned long long int octet,
+						size_t size, size_t len);
+unsigned short		*ft_uscpy(unsigned short *dest, unsigned short *src, size_t len);
 
 #endif

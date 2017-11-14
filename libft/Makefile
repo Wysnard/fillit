@@ -34,7 +34,8 @@ SRCFILE = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c \
 		ft_power.c ft_print_bits.c \
 		ft_strndup.c ft_strrev.c \
 		ft_strtrijoin.c ft_swap.c \
-		ft_utoa.c ft_sqr.c ft_printnbits.c
+		ft_utoa.c ft_sqr.c ft_printnbits.c \
+		ft_uscpy.c
 
 SRC = $(SRCFILE)
 
