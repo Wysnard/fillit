@@ -1,6 +1,6 @@
 #include "fillit.h"
 
-void	ft_bitaddtotab(char *map, short unsigned bit, size_t at)
+void	ft_bitaddtotab(char *map, unsigned short int tetrimino, size_t at)
 {
 	if (bit)
 		map[at / 8] |= 128 >> (at & 7);
@@ -8,18 +8,23 @@ void	ft_bitaddtotab(char *map, short unsigned bit, size_t at)
 		map[at / 8] &= ~(128 >> (at & 7));
 }
 
-/*void	ft_placetetris(char *map, unsigned short int tetrimino, size_t at)
+void	ft_placetetris(char *map, unsigned char tetrimino, size_t at, size_t max)
 {
 	size_t	i;
+	unsigned short	tmp;
 
 	i = 0;
+	tmp = tetrimino;
 	while (i < 16)
 	{
-		ft_bitaddtotab(map, ((tetrimino >> (15 - i)) & 1), at);
+		ft_bitaddtotab(map, ((((tmp << i) & (1 << 7))) << 7) & FIRSTBIT , at);
 		i += 1;
-		at += 1;
+		if (!(i % 4))
+			at += 4;
+		else
+			at += 1;
 	}
-}*/
+}
 
 unsigned short	ft_registerbits(char *buf)
 {
