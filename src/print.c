@@ -1,11 +1,11 @@
 #include "fillit.h"
 
-size_t	ft_readtabbit(char *map, size_t at)
+size_t	ft_readtabbit(unsigned short *map, size_t at)
 {
-	return ((map[at / 8] & (1 << (at & 7))) ? 1 : 0);
+	return ((map[at / 16] & (1 << (at & 15))) ? 1 : 0);
 }
 
-void	ft_tabprintbit(char *map, size_t max)
+void	ft_tabprintbit(unsigned short *map, size_t max)
 {
 	size_t	at;
 

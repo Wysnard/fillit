@@ -22,12 +22,12 @@ t_etris	*ft_tetrimino(unsigned short int c);
 unsigned	short	ft_standard(unsigned short c);
 void	ft_printtetris(unsigned char c);
 void	ft_heightlength(unsigned short c, unsigned char *hl);
-void	ft_bitaddtotab(char *map, unsigned short int tetrimino, size_t at);
-void	ft_placetetris(char *map, unsigned short tetrimino, size_t at, size_t max);
+void	ft_bitaddtotab(unsigned short *map, unsigned short int tetrimino, size_t at);
+void	ft_placetetris(unsigned short *map, unsigned short tetrimino, size_t at, size_t max);
 void		ft_lstprtbits(t_list *list);
 unsigned char	ft_bitsrotate(unsigned short c);
-int		ft_solve(t_list *list, char *map, size_t max);
+int		ft_solve(t_list *list, unsigned short *map, size_t max);
 unsigned	short	ft_bitsrerotate(unsigned char c);
-void	ft_tabprintbit(char *map, size_t max);
+void	ft_tabprintbit(unsigned short *map, size_t max);
 
 #endif

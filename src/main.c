@@ -4,7 +4,7 @@
 int	main(int argc, char **argv)
 {
 	t_list	*list;
-	char	map[14];
+	unsigned short	map[11];
 	int	fd;
 	t_etris	*tetris;
 	size_t	max;
@@ -26,15 +26,13 @@ int	main(int argc, char **argv)
 		tetris = (t_etris *)list->content;
 		//ft_print_bits(198, 8);
 		ft_placetetris(map, ft_bitsrerotate(tetris->tetrimino), 0, max);
-		//ft_bitaddtotab(map, 1, 20);
-		//ft_bitaddtotab(map, 1, 2);
+		//ft_bitaddtotab(map, 1, 16);
+		//ft_bitaddtotab(map, 1, 17);
 		//ft_bitaddtotab(map, 1, 10);
+		//ft_print_bits(ft_bitsrerotate(tetris->tetrimino), 15);
 		while (i < max)
 		{
-			if (max < 8)
-				ft_printnbits(map[i], 7, max);
-			else
-				ft_print_bits(map[i], 7);
+			ft_printnbits(map[i], 15, max);
 			ft_putchar('\n');
 			i += 1;
 		}
