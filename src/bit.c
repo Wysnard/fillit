@@ -10,11 +10,11 @@ void	ft_bitaddtotab(char *map, unsigned short int tetrimino, size_t at)
 
 void	ft_placetetris(char *map, unsigned short tetrimino, size_t at, size_t max)
 {
-	//size_t	i;
+	size_t	i;
 
-	//i = 0;
+	i = 0;
 	//tetrimino <<= 8;
-	/*while (i < 16)
+	while (i < 16)
 	{
 		if ((tetrimino << i) & FIRSTBIT)
 			ft_bitaddtotab(map, 1, at);
@@ -23,10 +23,10 @@ void	ft_placetetris(char *map, unsigned short tetrimino, size_t at, size_t max)
 			at += max;
 		else
 			at += 1;
-	}*/
-	map[at / 8] |= tetrimino & 0xF000;
-	at += max;
-	map[at / 8] |= tetrimino & 0x0F00;
+	}
+	//map[at / 8] |= tetrimino & 0xF000;
+	//at += max;
+	//map[at / 8] |= tetrimino & 0x0F00;
 }
 
 unsigned short	ft_registerbits(char *buf)

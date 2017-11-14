@@ -1,22 +1,19 @@
 #include "fillit.h"
 
-void	ft_tabprintbit(char *map, size_t base)
+size_t	ft_readtabbit(char *map, size_t at)
 {
-	size_t	i;
+	return ((map[at / 8] & (1 << (at & 7))) ? 1 : 0);
+}
 
-	i = 0;
-	while (*map)
+void	ft_tabprintbit(char *map, size_t max)
+{
+	size_t	at;
+
+	at = 0;
+	(void)max;
+	while (at < 104)
 	{
-		while (i < 8 && i < base)
-		{
-			ft_putchar((((*map) >> (base - i)) & 1) ? '1' : '0');
-			i += 1;
-		}
-		if (i == base)
-		{
-			i = 0;
-			ft_putchar('\n');
-		}
-		map += 1;
+		ft_putnbr(ft_readtabbit(map, at));
+		at += 1;
 	}
 }

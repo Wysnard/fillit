@@ -1,22 +1,24 @@
 #include "fillit.h"
 
-/*static int	ft_fit_in(char *map, t_etris *tetris, size_t i, size_t max)
+int	ft_fit_in(char *map, unsigned short tetrimino, size_t at, size_t max)
 {
-	size_t	j;
-	size_t	sqt;
+	size_t	i;
+	size_t	pos;
 
-	j = 0;
-	sqt = max * max;
-	while (i < sqt)
+	i = 0;
+	pos = at;
+	while (i < 16)
 	{
-		if ((tetris->tetrimino << j) & FIRSTBIT)
-			if ((map[i / max] << (i % max)) & FIRSTBIT)
-				return (0);
+		if ((tetrimino << i) & FIRSTBIT && map[pos / 8] & 128)
+			return (0);
 		i += 1;
-		j += 1;
+		if (!(i & 3))
+			pos += max;
+		else
+			pos += 1;
 	}
-	ft_placetetris(map, tetris->tetrimino, i, max);
-	return (1);
+	ft_placetetris(map, tetrimino, at, max);
+	return(1);
 }
 
 int	ft_solve(t_list *list, char *map, size_t max)
@@ -28,20 +30,23 @@ int	ft_solve(t_list *list, char *map, size_t max)
 
 	if (!list)
 		return (1);
-	maximum = max * max;
 	i = 0;
+	maximum = max * 4;
 	ft_strcpy(save, map);
 	tetris = (t_etris *)list->content;
 	while (i < maximum)
 	{
-		if (ft_fit_in(map, tetris, i, maximum))
+		if (ft_fit_in(map, tetris->tetrimino, i, max))
 		{
-			if (ft_solve(list->next, map, maximum))
+			if (ft_solve(list->next, map, max))
 				return (1);
 			else
-				ft_strcpy(save, map);
+			{
+				ft_bzero(save, 14);
+				ft_strcpy(map, save);
+			}
 		}
 		i += 1;
 	}
 	return (0);
-}*/
+}

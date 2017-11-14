@@ -5,21 +5,20 @@ unsigned char	ft_bitsrotate(unsigned short c)
 	unsigned char	rotate;
 
 	rotate = 0;
-	if (c == 0b1000100010001000)
-		rotate = 0b11110001;
-	else if (c == 0b100110001000000)
-		rotate = 0b11101001;
-	else if (c == 0b100010011000000)
-		rotate = 0b11100011;
-	else if (c == 0b1000110010000000)
-		rotate = 0b1001111;
-	else if (c == 0b1000110001000000)
-		rotate = 0b1101101;
-	else if (c == 0b100110010000000)
-		rotate = 0b11000111;
-	else if (c == 0b1100100001000000)
-		rotate = 0b10001111;
-
+	if (c == 34952)
+		rotate = 241;
+	else if (c == 19520)
+		rotate = 233;
+	else if (c == 17600)
+		rotate = 227;
+	else if (c == 35968)
+		rotate = 79;
+	else if (c == 35904)
+		rotate = 109;
+	else if (c == 19584)
+		rotate = 199;
+	else if (c == 51264)
+		rotate = 143;
 	else
 		rotate = (c >> 8);
 	return (rotate);
@@ -30,20 +29,20 @@ unsigned	short	ft_bitsrerotate(unsigned char c)
 	unsigned	short	rotate;
 
 	rotate = c;
-	if (c == 0b11110001)
-		rotate = 0b1000100010001000;
-	else if (c == 0b11101001)
-		rotate = 0b100110001000000;
-	else if (c == 0b11100011)
-		rotate = 0b100010011000000;
-	else if (c == 0b1001111)
-		rotate = 0b1000110010000000;
-	else if (c == 0b1101101)
-		rotate = 0b1000110001000000;
-	else if (c == 0b11000111)
-		rotate = 0b100110010000000;
-	else if (c == 0b10001111)
-		rotate = 0b1100100001000000;
+	if (c == 241)
+		rotate = 34952;
+	else if (c == 233)
+		rotate = 19520;
+	else if (c == 227)
+		rotate = 17600;
+	else if (c == 79)
+		rotate = 35968;
+	else if (c == 109)
+		rotate = 35904;
+	else if (c == 199)
+		rotate = 19584;
+	else if (c == 143)
+		rotate = 51264;
 	else
 		rotate <<= 8;
 	return (rotate);

@@ -12,18 +12,23 @@
 
 #include "libft.h"
 
-void	ft_print_bits(unsigned int octet, int size)
+void	ft_print_bits(unsigned long long int octet, size_t size)
 {
-	int		i;
-	char	bits[size + 1];
+	size_t									i;
+	unsigned long long int	oct;
 
-	i = 0;
-	while (i < size)
+	if (size == 0)
+		return ;
+	i = 1;
+	while (size)
 	{
-		bits[i] = ((octet >> i) & 1) ? '1' : '0';
-		i++;
+		i <<= 1;
+		size -= 1;
 	}
-	bits[size] = '\0';
-	ft_strrev(bits);
-	ft_putstr(bits);
+	oct = octet;
+	while (i)
+	{
+		ft_putchar((oct & i) ? '1' : '0');
+		i >>= 1;
+	}
 }
