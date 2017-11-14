@@ -13,7 +13,7 @@ void	ft_placetetris(char *map, unsigned short tetrimino, size_t at, size_t max)
 	size_t	i;
 
 	i = 0;
-	tetrimino <<= 7;
+	tetrimino <<= 8;
 	while (i < 16)
 	{
 		if ((tetrimino << i) & FIRSTBIT)
