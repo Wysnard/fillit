@@ -24,7 +24,7 @@ void	ft_placetetris(char *map, unsigned short tetrimino, size_t at, size_t max)
 		else
 			at += 1;
 	}*/
-	map[at / 8] |= tetrimino & 0x000F;
+	map[at / 8] |= tetrimino & 0x0F00;
 	at += max;
 	map[at / 8] |= tetrimino & 0x00F0;
 }
