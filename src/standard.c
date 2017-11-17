@@ -2,47 +2,35 @@
 
 unsigned	char	ft_formrect(unsigned char hl, unsigned short tetris)
 {
-	unsigned	char	form_part;
-	unsigned	char	tet_part;
-	unsigned	short	i;
+	unsigned	char	tet;
+	unsigned	char	i;
 
 	i = 15;
-	tet_part = 0;
-	form_part = 0;
+	tet = 0;
 	if (hl >> 4 == 3)
 	{
-		form_part = 1 << 6;
+		tet = 64;
 		while (i >= 6)
 		{
-			tet_part = tet_part + (ft_power(2, i) & tetris);
-			// ft_putnbr(i);
-			// ft_putchar('\n');
-			// ft_putnbr(ft_power(2,i));
-			// ft_putchar('\n');
-			// ft_print_bits(ft_power(2,i), 15);
-			// ft_putchar('\n');
-			// ft_print_bits(tetris, 15);
-			// ft_putchar('\n');
+			ft_setbitat(&tet, i, ft_getbitat(tetris, i));
 			if (i % 4 == 2)
-			{
 				i -= 3;
-			}
 			else
 				i--;
 		}
 	}
 	else if (hl >> 4 == 2)
 	{
-		while (i >= 10)
+		while (i >= 9)
 		{
-			tet_part = tet_part + (ft_power(2, i) & tetris);
-			if (i % 4 == 2)
+			ft_setbitat(&tet, i, ft_getbitat(tetris, i));
+			if (i % 4 == 1)
 				i -= 2;
 			else
 				i--;
 		}
 	}
-	return (form_part + tet_part);
+	return (tet);
 }
 
 unsigned	char	ft_putinchar(unsigned short c)

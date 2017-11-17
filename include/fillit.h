@@ -29,5 +29,7 @@ unsigned	short	ft_bitsrerotate(unsigned char c);
 void	ft_tabprintbit(unsigned short *map, size_t max);
 int	ft_fit_in(unsigned short *map, unsigned short tetrimino, size_t at, size_t max);
 unsigned	char	ft_putinchar(unsigned short c);
+unsigned char	ft_getbitat(unsigned char byte, unsigned char at);
+void ft_setbitat(unsigned char *byte, unsigned char at, unsigned char val);
 
 #endif
