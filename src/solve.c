@@ -1,6 +1,6 @@
 #include "fillit.h"
 
-int	ft_fit_in(unsigned short *map, unsigned short tetrimino, size_t at, size_t max)
+/*int	ft_fit_in(unsigned short *map, unsigned short tetrimino, size_t at, size_t max)
 {
 	size_t	i;
 	size_t	pos;
@@ -46,4 +46,4 @@ int	ft_solve(t_list *list, unsigned short *map, size_t max)
 		i += 1;
 	}
 	return (0);
-}
+}*/

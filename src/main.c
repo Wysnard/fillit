@@ -6,27 +6,19 @@ int	main(int argc, char **argv)
 	t_list	*list;
 	unsigned	short	map[11];
 	int	fd;
-	t_etris	*tetris;
+	t_etris	tetris;
 	size_t	max;
 	size_t	i;
-	unsigned	short	ex[] = {3, 4, 5};
-	unsigned	short	st[4];
 
-	ft_uscpy(st, ex, 3);
-	ft_putstr("TEST = \n");
-	ft_putnbr(st[0]);
-	ft_putchar('\n');
-	ft_putnbr(st[1]);
-	ft_putchar('\n');
 	list = NULL;
 	i = 0;
 	if (argc == 2)
 	{
 		fd = open(argv[1], O_RDONLY);
 		ft_bzero(map, 14);
-		if (!(max = ft_read(fd, &list)))
+		if (!(max = ft_read(fd, &tetris)))
 			ft_putstr_fd("Error\n", 2);
-		if (!list)
+		/*if (!list)
 			return (0);
 		printf("MAX = %lu\n", max);
 		ft_lstiter(list, &ft_lstprtbits);
@@ -48,7 +40,7 @@ int	main(int argc, char **argv)
 			i += 1;
 		}
 		ft_putchar('\n');
-		ft_tabprintbit(map, max);
+		ft_tabprintbit(map, max);*/
 		/*ft_print_bits(map[0], 8);
 		ft_putchar('\n');
 		ft_print_bits(map[1], 8);

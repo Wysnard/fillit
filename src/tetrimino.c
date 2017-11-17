@@ -21,29 +21,3 @@ void	ft_printtetris(unsigned char c)
 	else
 		ft_putchar('0');
 }
-
-void	ft_lstprtbits(t_list *list)
-{
-	t_etris	*tetris;
-
-	tetris = (t_etris *)list->content;
-	//ft_print_bits((tetris->hl << 4) >> 4, 4);
-	//ft_print_bits(tetris->hl >> 4, 4);
-	printf("height = %d\n", tetris->hl >> 4);
-	printf("length = %d\n", tetris->hl & 15);
-	ft_print_bits(tetris->tetrimino, 7);
-	ft_putchar('\n');
-	ft_printtetris(tetris->tetrimino);
-	ft_putchar('\n');
-}
-
-t_etris	*ft_tetrimino(unsigned short int c)
-{
-	t_etris	*tetris;
-
-	if (!(tetris = malloc(sizeof(*tetris))) || !c)
-		return (NULL);
-	ft_heightlength(c, &tetris->hl);
-	tetris->tetrimino = ft_bitsrotate(c);
-	return (tetris);
-}
