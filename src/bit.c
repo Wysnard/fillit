@@ -52,12 +52,23 @@ unsigned short	ft_registerbits(char *buf)
 
 void ft_setbitat(unsigned char *byte, unsigned char at, unsigned char val) {
 	if (val == 0 && ft_getbitat(*byte, at) == 1)
-		*byte = *byte - (unsigned char)ft_power(2, at);
+	{
+			*byte = *byte - (2 << (at - 1));
+	}
 	else if(val == 1 && ft_getbitat(*byte, at) == 0)
-		*byte = *byte + (unsigned char)ft_power(2, at);
+	{
+				*byte = *byte + (2 << (at - 1));
+	}
 }
 
-unsigned char	ft_getbitat(unsigned char byte, unsigned char at)
+unsigned char	ft_getbitatchar(unsigned char byte, unsigned char at)
+{
+	char	ret;
+	ret = ((byte >> at) & 1);
+	return (ret);
+}
+
+unsigned char	ft_getbitat(unsigned short byte, unsigned short at)
 {
 	char	ret;
 	ret = ((byte >> at) & 1);

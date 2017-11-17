@@ -3,31 +3,35 @@
 unsigned	char	ft_formrect(unsigned char hl, unsigned short tetris)
 {
 	unsigned	char	tet;
-	unsigned	char	i;
+	unsigned	short	i;
+	unsigned char j;
 
 	i = 15;
+	j = 5;
 	tet = 0;
 	if (hl >> 4 == 3)
 	{
 		tet = 64;
 		while (i >= 6)
 		{
-			ft_setbitat(&tet, i, ft_getbitat(tetris, i));
-			if (i % 4 == 2)
+			ft_setbitat(&tet, j, ft_getbitat(tetris, i));
+			if ((i & 3) == 2)
 				i -= 3;
 			else
 				i--;
+			j--;
 		}
 	}
 	else if (hl >> 4 == 2)
 	{
 		while (i >= 9)
 		{
-			ft_setbitat(&tet, i, ft_getbitat(tetris, i));
-			if (i % 4 == 1)
+			ft_setbitat(&tet, j, ft_getbitat(tetris, i));
+			if ((i & 3) == 1)
 				i -= 2;
 			else
 				i--;
+			j--;
 		}
 	}
 	return (tet);
