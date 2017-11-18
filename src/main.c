@@ -9,6 +9,7 @@ int	main(int argc, char **argv)
 	t_etris	tetris;
 	size_t	max;
 	size_t	i;
+	unsigned short	test;
 
 	list = NULL;
 	i = 0;
@@ -21,7 +22,7 @@ int	main(int argc, char **argv)
 		if (!(map = (unsigned short *)malloc(sizeof(unsigned short) * max)))
 			return (0);
 		ft_bzero(map, max);
-		ft_placetetris(map, tetris.tetrimino[0], 0);
+		ft_placetetris(map, tetris.tetrimino[0], 18);
 		//if (!list)
 			//return (0);
 		//ft_lstiter(list, &ft_lstprtbits);
@@ -43,6 +44,11 @@ int	main(int argc, char **argv)
 			i += 1;
 		}
 		ft_putchar('\n');
+		test = 400;
+		ft_print_bits(test, 15);
+		test = ft_bitrotr(test, 1);
+		ft_putchar('\n');
+		ft_print_bits(test, 15);
 		//ft_tabprintbit(map, max);
 		/*ft_print_bits(map[0], 8);
 		ft_putchar('\n');
