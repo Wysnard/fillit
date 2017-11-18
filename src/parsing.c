@@ -9,6 +9,8 @@ int	ft_cttetris(char *buf)
 	n = 0;
 	while (buf[i])
 	{
+		if (buf[i] != '#' && buf[i] != '.' && buf[i] != '\n')
+			return (0);
 		if (buf[i] == '#')
 			n++;
 		i++;
