@@ -144,5 +144,7 @@ size_t				ft_sqr(int	nb);
 void				ft_printnbits(unsigned long long int octet,
 						size_t size, size_t len);
 unsigned short		*ft_uscpy(unsigned short *dest, unsigned short *src, size_t len);
+unsigned short 		ft_bitrotl(unsigned short value, int shift);
+unsigned short 		ft_bitrotr(unsigned short value, int shift);
 
 #endif

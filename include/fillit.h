@@ -22,7 +22,6 @@ unsigned	short	ft_standard(unsigned short c);
 void	ft_printtetris(unsigned char c);
 unsigned	char	ft_heightlength(unsigned short c);
 void	ft_bitaddtotab(unsigned short *map, unsigned short int tetrimino, size_t at);
-void	ft_placetetris(unsigned short *map, unsigned short tetrimino, size_t at, size_t max);
 unsigned char	ft_bitsrotate(unsigned short c);
 int		ft_solve(t_list *list, unsigned short *map, size_t max);
 unsigned	short	ft_bitsrerotate(unsigned char c);
@@ -32,5 +31,7 @@ unsigned	char	ft_putinchar(unsigned short c);
 unsigned char	ft_getbitatchar(unsigned char byte, unsigned char at);
 void ft_setbitat(unsigned char *byte, unsigned char at, unsigned char val);
 unsigned char	ft_getbitat(unsigned short byte, unsigned short at);
+int	ft_cttetris(char *buf);
+void	ft_placetetris(unsigned short *map, unsigned char tetris, size_t at);
 
 #endif
