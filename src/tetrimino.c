@@ -5,7 +5,7 @@ void	ft_printtetris(unsigned char c)
 {
 	int	i;
 
-	i = 7;
+	i = 8;
 	while (i > 0)
 	{
 		if (c & (1 << i))
@@ -16,8 +16,4 @@ void	ft_printtetris(unsigned char c)
 			ft_putchar('\n');
 		i -= 1;
 	}
-	if (c & (1 << i))
-		ft_putchar('1');
-	else
-		ft_putchar('0');
 }

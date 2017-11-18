@@ -12,7 +12,7 @@
 
 typedef	struct	s_etris
 {
-	unsigned	char	tetris[27];
+	unsigned	char	tetrimino[27];
 	unsigned	char	max;
 }							t_etris;
 
