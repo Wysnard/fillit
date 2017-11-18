@@ -89,3 +89,8 @@ void	ft_placetetris(unsigned short *map, unsigned char tetris, size_t at)
 	}
 	//ft_mapmove(map, tetrimino, at);
 }
+
+int	ft_placetetat(unsigned short *map, unsigned char tet, unsigned char at)
+{
+	return (0);
+}
