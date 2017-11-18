@@ -21,8 +21,8 @@ int	main(int argc, char **argv)
 		printf("MAX = %lu\n", max);
 		if (!(map = (unsigned short *)malloc(sizeof(unsigned short) * max)))
 			return (0);
-		ft_bzero(map, max);
-		ft_placetetris(map, tetris.tetrimino[0], 18);
+		ft_initmap(&map, max);
+		ft_placetetris(map, tetris.tetrimino[0], 20);
 		//if (!list)
 			//return (0);
 		//ft_lstiter(list, &ft_lstprtbits);
@@ -58,6 +58,7 @@ int	main(int argc, char **argv)
 		//ft_tabprintbit(map, max);
 		//ft_lstdelall(&list);
 		free(map);
+		ft_putstr("AHAH\n");
 	}
 	return (1);
 }

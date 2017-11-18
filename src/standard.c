@@ -14,7 +14,7 @@ unsigned	char	ft_formrect(unsigned char hl, unsigned short tetris)
 		tet = 64;
 		while (i >= 6)
 		{
-			ft_setbitat(&tet, j, ft_getbitat(tetris, i));
+			ft_setbitat((unsigned short*)(&tet), j, ft_getbitat(tetris, i));
 			i -= ((i & 3) == 2) ? 3 : 1;
 			j--;
 		}
@@ -23,7 +23,7 @@ unsigned	char	ft_formrect(unsigned char hl, unsigned short tetris)
 	{
 		while (i >= 9)
 		{
-			ft_setbitat(&tet, j, ft_getbitat(tetris, i));
+			ft_setbitat((unsigned short*)(&tet), j, ft_getbitat(tetris, i));
 			i -= ((i & 3) == 1) ? 2 : 1;
 			j--;
 		}
