@@ -5,6 +5,9 @@
 # define HEIGHTMASK 61440
 # define FIRSTBIT 32768
 # define FLLASTBIT 4096
+# define TETSQR 0xF000
+# define TETDWB 0xF000
+# define TETUPB 0xF000
 #	include <sys/types.h>
 #	include <sys/stat.h>
 #	include <fcntl.h>
@@ -29,9 +32,17 @@ void	ft_tabprintbit(unsigned short *map, size_t max);
 int	ft_fit_in(unsigned short *map, unsigned short tetrimino, size_t at, size_t max);
 unsigned	char	ft_putinchar(unsigned short c);
 unsigned char	ft_getbitatchar(unsigned char byte, unsigned char at);
-void ft_setbitat(unsigned char *byte, unsigned char at, unsigned char val);
+void ft_setbitat(unsigned short *byte, unsigned char at, unsigned char val);
 unsigned char	ft_getbitat(unsigned short byte, unsigned short at);
 int	ft_cttetris(char *buf);
-void	ft_placetetris(unsigned short *map, unsigned char tetris, size_t at);
+void	ft_placetetris(unsigned short *map, unsigned char tet, char at);
+int	ft_isdwrtet(unsigned char tet);
+int	ft_isuprtet(unsigned char tet);
+int	ft_issqrtet(unsigned char tet);
+int ft_isdwbtet(unsigned char tet);
+int ft_isupbtet(unsigned char tet);
+int	ft_hlassign(char *h, char *l, char val_h, char val_l);
+unsigned short ft_getlinemask(char l);
+void	ft_initmap(unsigned short **map, size_t max);
 
 #endif
