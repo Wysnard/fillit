@@ -2,10 +2,14 @@
 
 unsigned short	*ft_uscpy(unsigned short *dest, unsigned short *src, size_t len)
 {
-	unsigned short	*tmp;
+	size_t	i;
 
-	tmp = dest;
-	while ((*tmp++ = *src++) && len)
+	i = 0;
+	while (len)
+	{
+		dest[i] = src[i];
+		i++;
 		len--;
+	}
 	return (dest);
 }
