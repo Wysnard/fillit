@@ -20,7 +20,7 @@ unsigned short	ft_registerbits(char *buf)
 	return (c);
 }
 
-void ft_setbitat(unsigned char *byte, unsigned char at, unsigned char val) {
+void ft_setbitat(unsigned short *byte, unsigned char at, unsigned char val) {
 	if (val == 0 && ft_getbitat(*byte, at) == 1)
 			*byte = *byte - ft_power(2,at);
 	else if(val == 1 && ft_getbitat(*byte, at) == 0)

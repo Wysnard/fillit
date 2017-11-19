@@ -55,35 +55,21 @@ void	ft_mapremove(unsigned short *map, size_t at, int rot)
 	}
 }
 
-void	ft_placetetris(unsigned short *map, unsigned char tetris, size_t at)
+void	ft_placetetris(unsigned short *map, unsigned char tet, unsigned char at)
 {
-	unsigned short	tetrimino;
-	size_t	i;
-	//size_t	code;
-	//size_t	rot;
+	unsigned short	tet_inline;
+	unsigned short	linemask;
+	char	tet_h;
+	char	tet_l;
+	char	i;
 
 	i = 0;
-	tetris <<= 2;
-	tetrimino = tetris;
-	tetrimino <<= 8;
-	(void)at;
-	/*if (!(tetris & 0x80))
+	tet_inline = ft_gettetinline(tet, &tet_h, &tet_l);
+	linemask = ft_getlinemask(tet_l);
+	while (i < tet_h)
 	{
-		if ((tetris <<= 1) & 0x80)
-		{
-			code = 2;
-			tetris <<= 1;
-		}
-		else
-		{
-			code = 3;
-			tetris <<= 1;
-		}
-	}*/
-	while (i < 4)
-	{
-		map[at / 16] = (tetrimino & 0xE000) >> (at & 15);
-		tetrimino <<= 3;
+		map[at / 16] |= (tet_inline & linemask) >> (at & 15);
+		tet_inline <<= tet_l;
 		i++;
 		at += 16;
 	}
