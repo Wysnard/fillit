@@ -1,7 +1,7 @@
 #include "fillit.h"
 #include <stdio.h>
 
-int	ft_fit_in(unsigned short *map, unsigned char tet, size_t at, size_t min)
+int	ft_fit_in(unsigned short *map, unsigned char tet, size_t at)
 {
 	unsigned char	i;
 	unsigned short	linemask;
@@ -14,7 +14,6 @@ int	ft_fit_in(unsigned short *map, unsigned char tet, size_t at, size_t min)
 	i = 0;
 	keep_at = at;
 	tet_inline = ft_gettetinline(tet, &tet_h, &tet_l);
-	(void)min;
 	// if (((at + tet_l - 1) % 16) >= min || ((at / 16) + tet_h - 1) >= min)
 	// {
 	// 	return (0);
@@ -50,11 +49,8 @@ int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tet
 	while (((i / 16) + tet_h - 1) < min)
 	{
 		if (((i + tet_l - 1) % 16) >= min)
-		{
-			i = 16 * j;
-			j++;
-		}
-		if (ft_fit_in(map, tetris->tetriminos[tetnum], i, min))
+			i = 16 * j++;
+		if (ft_fit_in(map, tetris->tetriminos[tetnum], i))
 		{
 			if (ft_solve(tetris, map, min, tetnum + 1))
 			{

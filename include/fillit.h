@@ -30,7 +30,7 @@ unsigned char	ft_bitsrotate(unsigned short c);
 int		ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tetnum);
 unsigned	short	ft_bitsrerotate(unsigned char c);
 void	ft_tabprintbit(unsigned short *map, size_t max);
-int	ft_fit_in(unsigned short *map, unsigned char tet, size_t at, size_t min);
+int	ft_fit_in(unsigned short *map, unsigned char tet, size_t at);
 unsigned	char	ft_putinchar(unsigned short c);
 unsigned char	ft_getbitatchar(unsigned char byte, unsigned char at);
 void ft_setbitat(unsigned short *byte, unsigned char at, unsigned char val);
