@@ -55,7 +55,7 @@ void	ft_mapremove(unsigned short *map, size_t at, int rot)
 	}
 }
 
-void	ft_placetetris(unsigned short *map, unsigned char tet, char at)
+void	ft_placetetris(unsigned short *map, unsigned char tet, unsigned char at)
 {
 	unsigned short	tet_inline;
 	unsigned short	linemask;
@@ -64,17 +64,7 @@ void	ft_placetetris(unsigned short *map, unsigned char tet, char at)
 	char	i;
 
 	i = 0;
-	tet_inline = (unsigned short)tet;
-	if (ft_issqrtet(tet) && ft_hlassign(&tet_h, &tet_l, 2, 2))
-		tet_inline = TETSQR;
-	else if (ft_isdwbtet(tet) && ft_hlassign(&tet_h, &tet_l, 1, 4))
-		tet_inline = TETDWB;
-	else if (ft_isupbtet(tet) && ft_hlassign(&tet_h, &tet_l, 4, 1))
-		tet_inline = TETUPB;
-	else if (ft_isdwrtet(tet) && ft_hlassign(&tet_h, &tet_l, 2, 3))
-		tet_inline <<= 10;
-	else if (ft_isuprtet(tet) && ft_hlassign(&tet_h, &tet_l, 3, 2))
-		tet_inline <<= 10;
+	tet_inline = ft_gettetinline(tet, &tet_h, &tet_l);
 	linemask = ft_getlinemask(tet_l);
 	while (i < tet_h)
 	{
