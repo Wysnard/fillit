@@ -19,7 +19,8 @@ SRC_NAME =  main.c \
 						print.c \
 						parsing.c \
 						tetriminos_forms.c \
-						init.c
+						init.c \
+						result.c
 
 CC = gcc
 

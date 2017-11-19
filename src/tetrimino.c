@@ -73,5 +73,4 @@ void	ft_placetetris(unsigned short *map, unsigned char tet, unsigned char at)
 		i++;
 		at += 16;
 	}
-	//ft_mapmove(map, tetrimino, at);
 }

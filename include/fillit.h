@@ -17,6 +17,7 @@ typedef	struct	s_etris
 {
 	unsigned	char	tetriminos[27];
 	unsigned	char	min;
+	unsigned	char	at[27];
 }							t_etris;
 
 size_t	ft_read(int fd, t_etris *tetris);
@@ -45,5 +46,7 @@ int	ft_hlassign(char *h, char *l, char val_h, char val_l);
 unsigned short ft_getlinemask(char l);
 void	ft_initmap(unsigned short **map, size_t max);
 unsigned short	ft_gettetinline(unsigned char tet, char *h, char *l);
+void	ft_fillresulttab(char **tab, unsigned char tet, unsigned char at, unsigned char tetnum);
+char	**ft_initresulttab(unsigned char min);
 
 #endif
