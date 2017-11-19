@@ -48,5 +48,6 @@ void	ft_initmap(unsigned short **map, size_t max);
 unsigned short	ft_gettetinline(unsigned char tet, char *h, char *l);
 void	ft_fillresulttab(char **tab, unsigned char tet, unsigned char at, unsigned char tetnum);
 char	**ft_initresulttab(unsigned char min);
+void	ft_print_map(unsigned short *map, unsigned char min);
 
 #endif

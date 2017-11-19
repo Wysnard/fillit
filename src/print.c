@@ -1,5 +1,18 @@
 #include "fillit.h"
 
+void	ft_print_map(unsigned short *map, unsigned char min)
+{
+	size_t	i;
+
+	i  = 0;
+	while (i < min)
+	{
+		ft_printnbits(map[i], 15, 15);
+		ft_putchar('\n');
+		i += 1;
+	}
+}
+
 size_t	ft_readtabbit(unsigned short *map, size_t at)
 {
 	return ((map[at / 16] & (1 << (at & 15))) ? 1 : 0);

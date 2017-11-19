@@ -22,6 +22,10 @@ int	main(int argc, char **argv)
 		if (!(map = (unsigned short *)malloc(sizeof(unsigned short) * tetris.min)))
 			return (0);
 		ft_initmap(&map, tetris.min);
+		// ft_fit_in(map, tetris.tetriminos[0], 2, tetris.min);
+		// ft_fit_in(map, tetris.tetriminos[3], 0, tetris.min);
+		// ft_fit_in(map, tetris.tetriminos[2], 16, tetris.min);
+		// ft_fit_in(map, tetris.tetriminos[1], 48, tetris.min);
 		while ((ft_solve(&tetris, map, tetris.min, 0) == 0))
 		{
 			tetris.min++;
@@ -29,13 +33,7 @@ int	main(int argc, char **argv)
 		}
 		ft_putstr("C'est gagnee!!!\n");
 		printf("REMIN = %d\n", tetris.min);
-		i = 0;
-		while (i < tetris.min)
-		{
-			ft_printnbits(map[i], 15, 15);
-			ft_putchar('\n');
-			i += 1;
-		}
+		ft_print_map(map, tetris.min);
 		if (!(resulttab = ft_initresulttab(tetris.min)))
 			return (0);
 		i = 0;
@@ -49,6 +47,14 @@ int	main(int argc, char **argv)
 		while (i < tetris.min)
 		{
 			ft_putstr(resulttab[i]);
+			i++;
+		}
+		ft_putchar('\n');
+		i = 0;
+		while (i < len)
+		{
+			ft_putnbr(tetris.at[i]);
+			ft_putchar('\n');
 			i++;
 		}
 		free(map);
