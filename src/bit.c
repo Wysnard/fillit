@@ -1,6 +1,20 @@
 #include "fillit.h"
 
-unsigned short	ft_registerbits(char *buf)
+unsigned	short	ft_createmask(size_t min)
+{
+	unsigned	short	mask;
+
+	mask = 0;
+	while (min)
+	{
+		mask >>= 1;
+		mask |= 0x8000;
+		min--;
+	}
+	return (mask);
+}
+
+unsigned	short	ft_registerbits(char *buf)
 {
 	unsigned short	c;
 	char		i;

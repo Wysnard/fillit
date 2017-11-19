@@ -11,6 +11,7 @@
 #	include <sys/types.h>
 #	include <sys/stat.h>
 #	include <fcntl.h>
+# include <stdint.h>
 #	include "libft.h"
 
 typedef	struct	s_etris
@@ -49,5 +50,6 @@ unsigned short	ft_gettetinline(unsigned char tet, char *h, char *l);
 void	ft_fillresulttab(char **tab, unsigned char tet, unsigned char at, unsigned char tetnum);
 char	**ft_initresulttab(unsigned char min);
 void	ft_print_map(unsigned short *map, unsigned char min);
+unsigned	short		ft_createmask(size_t min);
 
 #endif

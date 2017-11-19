@@ -22,10 +22,6 @@ int	main(int argc, char **argv)
 		if (!(map = (unsigned short *)malloc(sizeof(unsigned short) * tetris.min)))
 			return (0);
 		ft_initmap(&map, tetris.min);
-		// ft_fit_in(map, tetris.tetriminos[0], 2, tetris.min);
-		// ft_fit_in(map, tetris.tetriminos[3], 0, tetris.min);
-		// ft_fit_in(map, tetris.tetriminos[2], 16, tetris.min);
-		// ft_fit_in(map, tetris.tetriminos[1], 48, tetris.min);
 		while ((ft_solve(&tetris, map, tetris.min, 0) == 0))
 		{
 			tetris.min++;

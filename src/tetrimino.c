@@ -2,14 +2,6 @@
 #include "libft.h"
 #include <stdio.h>
 
-void	ft_bitaddtotab(unsigned short *map, unsigned short int tetrimino, size_t at)
-{
-	if (tetrimino)
-		map[at / 16] |= FIRSTBIT >> (at & 15);
-	else
-		map[at / 16] &= ~(FIRSTBIT >> (at & 15));
-}
-
 void	ft_placetetris(unsigned short *map, unsigned char tet, unsigned char at)
 {
 	unsigned short	tet_inline;
