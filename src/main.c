@@ -6,8 +6,10 @@ int	main(int argc, char **argv)
 	t_list	*list;
 	unsigned	short	*map;
 	int	fd;
+	size_t	len;
 	t_etris	tetris;
 	size_t	i;
+	char **resulttab;
 
 	list = NULL;
 	i = 0;
@@ -26,13 +28,28 @@ int	main(int argc, char **argv)
 			ft_initmap(&map, tetris.min);
 		}
 		ft_putstr("C'est gagnee!!!\n");
-		ft_putstr("la map une fois gagnee\n");
+		printf("REMIN = %d\n", tetris.min);
 		i = 0;
 		while (i < tetris.min)
 		{
 			ft_printnbits(map[i], 15, 15);
 			ft_putchar('\n');
 			i += 1;
+		}
+		if (!(resulttab = ft_initresulttab(tetris.min)))
+			return (0);
+		i = 0;
+		len = ft_strlen((const char*)tetris.tetriminos);
+		while (i < len)
+		{
+			ft_fillresulttab(resulttab, tetris.tetriminos[i], tetris.at[i], i);
+			i += 1;
+		}
+		i = 0;
+		while (i < tetris.min)
+		{
+			ft_putstr(resulttab[i]);
+			i++;
 		}
 		free(map);
 	}

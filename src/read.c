@@ -19,6 +19,8 @@ size_t	ft_read(int fd, t_etris *tetris)
 		ft_putchar('\n');
 		min++;
 	}
+	tetris->tetriminos[min] = 0;
+	ft_bzero(tetris->at, 27);
 	if (min < 4)
 		return (tetris->min = 4);
 	return (tetris->min = ft_sqr(min * 4));
