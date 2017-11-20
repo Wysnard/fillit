@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_cttetris(char *buf)
 {
@@ -9,10 +10,12 @@ int	ft_cttetris(char *buf)
 	i = 0;
 	n = 0;
 	pt = 0;
-	if (buf[4] != '\n' && buf[8] != '\n' && buf[12] != '\n' && buf[16] != '\n')
+	if (buf[i] != '#' && buf[i] != '.')
 		return (0);
 	while (buf[i])
 	{
+		if ((i == 4 || i == 9 || i == 14 || i == 19) && buf[i] != '\n')
+			return (0);
 		if (buf[i] != '#' && buf[i] != '.' && buf[i] != '\n')
 			return (0);
 		if (buf[i] == '#')

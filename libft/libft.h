@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 17:06:53 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/14 21:49:43 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/20 14:00:45 by vlay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,5 +146,6 @@ void				ft_printnbits(unsigned long long int octet,
 unsigned short		*ft_uscpy(unsigned short *dest, unsigned short *src, size_t len);
 unsigned short 		ft_bitrotl(unsigned short value, int shift);
 unsigned short 		ft_bitrotr(unsigned short value, int shift);
+void					ft_tabdel(char **tab);
 
 #endif

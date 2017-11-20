@@ -1,30 +1,34 @@
 #include "fillit.h"
 #include <stdio.h>
 
-int	ft_fit_in(unsigned short *map, unsigned char tet, size_t at)
+int	ft_compare(unsigned short *map, unsigned char tet, size_t at)
 {
-	unsigned char	i;
+	char	hl[2];
+	unsigned short tet_inline;
 	unsigned short	linemask;
 	unsigned short	tetline;
-	char	tet_h;
-	char	tet_l;
-	unsigned char keep_at;
-	unsigned short tet_inline;
+	unsigned char	i;
 
 	i = 0;
-	keep_at = at;
-	tet_inline = ft_gettetinline(tet, &tet_h, &tet_l);
-	linemask = ft_getlinemask(tet_l);
-	while (i < tet_h)
+	tet_inline = ft_gettetinline(tet, &hl[0], &hl[1]);
+	linemask = ft_getlinemask(hl[1]);
+	while (i < hl[0])
 	{
 		tetline = (tet_inline & linemask) >> (at & 15);
 		if ((map[at / 16] ^ tetline) != (map[at / 16] | tetline))
 			return (0);
-		tet_inline <<= tet_l;
+		tet_inline <<= hl[1];
 		i++;
 		at += 16;
 	}
-	ft_placetetris(map, tet, keep_at);
+	return (1);
+}
+
+int	ft_fit_in(unsigned short *map, unsigned char tet, size_t at)
+{
+	if (!(ft_compare(map, tet, at)))
+		return (0);
+	ft_placetetris(map, tet, at);
 	return(1);
 }
 
@@ -32,21 +36,18 @@ int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tet
 {
 	size_t	i;
 	unsigned	short	save[16];
-	char		tet_h;
-	char		tet_l;
 	size_t	j;
 	unsigned	short	mask;
 
 	if (tetris->tetriminos[tetnum] == 0)
 		return (1);
-	ft_gettetinline(tetris->tetriminos[tetnum], &tet_h, &tet_l);
 	i = 0;
 	j = 1;
 	ft_uscpy(save, map, min);
 	mask = ft_createmask(min);
-	while (((i / 16) + tet_h - 1) < min)
+	while (((i / 16) + tetris->h[tetnum] - 1) < min)
 	{
-		if (((i + tet_l - 1) % 16) >= min || !(mask ^ map[i / 16]))
+		if (((i + tetris->l[tetnum] - 1) % 16) >= min || !(mask ^ map[i / 16]))
 			i = 16 * j++;
 		if (ft_fit_in(map, tetris->tetriminos[tetnum], i))
 		{

@@ -4,19 +4,18 @@
 
 void	ft_placetetris(unsigned short *map, unsigned char tet, unsigned char at)
 {
+	char	hl[2];
 	unsigned short	tet_inline;
 	unsigned short	linemask;
-	char	tet_h;
-	char	tet_l;
 	char	i;
 
 	i = 0;
-	tet_inline = ft_gettetinline(tet, &tet_h, &tet_l);
-	linemask = ft_getlinemask(tet_l);
-	while (i < tet_h)
+	tet_inline = ft_gettetinline(tet, &hl[0], &hl[1]);
+	linemask = ft_getlinemask(hl[1]);
+	while (i < hl[0])
 	{
 		map[at / 16] |= (tet_inline & linemask) >> (at & 15);
-		tet_inline <<= tet_l;
+		tet_inline <<= hl[1];
 		i++;
 		at += 16;
 	}
