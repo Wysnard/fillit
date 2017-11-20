@@ -34,23 +34,26 @@ unsigned	short	ft_registerbits(char *buf)
 	return (c);
 }
 
-void ft_setbitat(unsigned short *byte, unsigned char at, unsigned char val) {
-	if (val == 0 && ft_getbitat(*byte, at) == 1)
-			*byte = *byte - ft_power(2,at);
-	else if(val == 1 && ft_getbitat(*byte, at) == 0)
-				*byte = *byte + ft_power(2,at);
-}
-
-unsigned char	ft_getbitatchar(unsigned char byte, unsigned char at)
+size_t	ft_consecutive_zero(unsigned	short	*map)
 {
-	char	ret;
-	ret = ((byte >> at) & 1);
-	return (ret);
-}
+	size_t	j;
+	size_t	i;
+	size_t	zero;
 
-unsigned char	ft_getbitat(unsigned short byte, unsigned short at)
-{
-	char	ret;
-	ret = ((byte >> at) & 1);
-	return (ret);
+	j = 0;
+	zero = 0;
+	while ()
+	{
+		i = 0;
+		while ()
+		{
+			while ()
+			{
+				zero += 1;
+				i += 1;
+			}
+			i += 1;
+		}
+	}
+	return (i);
 }

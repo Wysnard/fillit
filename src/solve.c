@@ -43,7 +43,8 @@ int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tet
 	mask = ft_createmask(min);
 	while (((i / 16) + tetris->h[tetnum] - 1) < min)
 	{
-		if (((i + tetris->l[tetnum] - 1) % 16) >= min || !(mask ^ map[i / 16]))
+		if (((i + tetris->l[tetnum] - 1) % 16) >= min ||
+				!(((mask << (i % 16))) ^ ((map[i / 16] << i % 16))))
 			i = 16 * j++;
 		if (ft_fit_in(map, i, *tetris, tetnum))
 		{
