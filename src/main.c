@@ -15,19 +15,17 @@ int	main(int argc, char **argv)
 	i = 0;
 	if (argc == 2)
 	{
-		if ((fd = open(argv[1], O_RDONLY)) < 0 || !(ft_read(fd, &tetris)))
-		{
+		fd = open(argv[1], O_RDONLY);
+		if (!(ft_read(fd, &tetris)))
 			ft_putstr_fd("Error\n", 2);
-			return (1);
-		}
 		printf("MIN = %d\n", tetris.min);
 		if (!(map = (unsigned short *)malloc(sizeof(unsigned short) * tetris.min)))
 			return (0);
-		ft_initmap(map, tetris.min);
+		ft_initmap(&map, tetris.min);
 		while ((ft_solve(&tetris, map, tetris.min, 0) == 0))
 		{
 			tetris.min++;
-			ft_initmap(map, tetris.min);
+			ft_initmap(&map, tetris.min);
 		}
 		ft_putstr("C'est gagnee!!!\n");
 		printf("REMIN = %d\n", tetris.min);
@@ -47,7 +45,6 @@ int	main(int argc, char **argv)
 			ft_putstr(resulttab[i]);
 			i++;
 		}
-		//ft_tabdel(resulttab);
 		ft_putchar('\n');
 		i = 0;
 		while (i < len)
