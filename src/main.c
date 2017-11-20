@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 		if (!(resulttab = ft_initresulttab(tetris.min)))
 			return (0);
 		i = 0;
-		len = ft_strlen((const char*)tetris.tetriminos);
+		len = ft_strlen((const char*)tetris.h);
 		while (i < len)
 		{
 			ft_fillresulttab(resulttab, tetris.at[i], i, &tetris);

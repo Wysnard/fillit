@@ -16,7 +16,6 @@
 typedef	struct	s_etris
 {
 	unsigned	short	tetris[27];
-	unsigned	char	tetriminos[27];
 	unsigned	char	min;
 	unsigned	char	at[27];
 	unsigned	char	h[27];

@@ -35,7 +35,7 @@ int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tet
 	size_t	j;
 	unsigned	short	mask;
 
-	if (tetris->tetriminos[tetnum] == 0)
+	if (tetris->tetris[tetnum] == 0)
 		return (1);
 	i = 0;
 	j = 1;
