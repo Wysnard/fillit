@@ -2,30 +2,18 @@
 #include "libft.h"
 #include <stdio.h>
 
-void	ft_bitaddtotab(unsigned short *map, unsigned short int tetrimino, size_t at)
+void	ft_placetetris(unsigned short *map, unsigned char at, t_etris tetris, unsigned char tetnum)
 {
-	if (tetrimino)
-		map[at / 16] |= FIRSTBIT >> (at & 15);
-	else
-		map[at / 16] &= ~(FIRSTBIT >> (at & 15));
-}
+	unsigned	short	tet;
+	unsigned	short	tetline;
 
-void	ft_placetetris(unsigned short *map, unsigned char tet, unsigned char at)
-{
-	unsigned short	tet_inline;
-	unsigned short	linemask;
-	char	tet_h;
-	char	tet_l;
-	char	i;
-
-	i = 0;
-	tet_inline = ft_gettetinline(tet, &tet_h, &tet_l);
-	linemask = ft_getlinemask(tet_l);
-	while (i < tet_h)
+	tet = tetris.tetris[tetnum];
+	while (tetris.h[tetnum])
 	{
-		map[at / 16] |= (tet_inline & linemask) >> (at & 15);
-		tet_inline <<= tet_l;
-		i++;
+		tetline = (tet & 0xF000) >> (at % 16);
+		map[at / 16] |= tetline;
+		tet = tet << 4;
+		tetris.h[tetnum] -= 1;
 		at += 16;
 	}
 }

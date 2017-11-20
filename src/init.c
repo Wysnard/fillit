@@ -6,14 +6,14 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 17:09:56 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/20 17:17:45 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/20 19:13:05 by vlay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-void	ft_initmap(unsigned short **map, size_t max)
+void	ft_initmap(unsigned short *map, size_t max)
 {
 	size_t			i;
 
@@ -21,11 +21,11 @@ void	ft_initmap(unsigned short **map, size_t max)
 	if (max == 0)
 		return ;
 	while (i < max)
-		(*map)[i++] = 0;
+		map[i++] = 0;
 	return ;
 }
 
-unsigned short	ft_gettetinline(unsigned char tet, char *h, char *l)
+unsigned short	ft_gettetinline(unsigned char tet, unsigned char *h, unsigned char *l)
 {
 	unsigned short tet_inline;
 

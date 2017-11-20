@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 15:17:06 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/18 17:06:02 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/20 18:49:44 by vlay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_isupbtet(unsigned char tet)
 	return (tet >> 5 == 5);
 }
 
-int	ft_hlassign(char *h, char *l, char val_h, char val_l)
+int	ft_hlassign(unsigned char *h, unsigned char *l, char val_h, char val_l)
 {
 	*h = val_h;
 	*l = val_l;
