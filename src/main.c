@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 		len = ft_strlen((const char*)tetris.tetriminos);
 		while (i < len)
 		{
-			ft_fillresulttab(resulttab, tetris.tetriminos[i], tetris.at[i], i);
+			ft_fillresulttab(resulttab, &tetris, i);
 			i += 1;
 		}
 		i = 0;

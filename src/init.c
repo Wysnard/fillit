@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 17:09:56 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/18 19:39:15 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/21 13:00:58 by schmurz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,20 @@ void	ft_initmap(unsigned short **map, size_t max)
 	return ;
 }
 
-unsigned short	ft_gettetinline(unsigned char tet, char *h, char *l)
+unsigned short	ft_gettetinline(unsigned char tet)
 {
 	unsigned short tet_inline;
 
 	tet_inline = (unsigned short)tet;
-	if (ft_issqrtet(tet) && ft_hlassign(h, l, 2, 2))
+	if (ft_issqrtet(tet))
 		tet_inline = TETSQR;
-	else if (ft_isdwbtet(tet) && ft_hlassign(h, l, 1, 4))
+	else if (ft_isdwbtet(tet)) 
 		tet_inline = TETDWB;
-	else if (ft_isupbtet(tet) && ft_hlassign(h, l, 4, 1))
+	else if (ft_isupbtet(tet)) 
 		tet_inline = TETUPB;
-	else if (ft_isdwrtet(tet) && ft_hlassign(h, l, 2, 3))
+	else if (ft_isdwrtet(tet)) 
 		tet_inline <<= 10;
-	else if (ft_isuprtet(tet) && ft_hlassign(h, l, 3, 2))
+	else if (ft_isuprtet(tet)) 
 		tet_inline <<= 10;
 	return (tet_inline);
 }

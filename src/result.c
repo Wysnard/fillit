@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 15:52:16 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/19 17:30:28 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/21 13:14:30 by schmurz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,20 @@ char	**ft_initresulttab(unsigned char min)
 	return (tab);
 }
 
-void ft_fillresulttab(char **tab, unsigned char tet, unsigned char at, unsigned char tetnum) {
-	char	tet_h;
-	char	tet_l;
+void ft_fillresulttab(char **tab, t_etris *t, unsigned char tetnum)
+{
 	char	i;
 	char	j;
+	char at;
 	unsigned short tet_inline;
 
 	i = 0;
 	j = 0;
-	tet_inline = ft_gettetinline(tet, &tet_h, &tet_l);
-	while (i < tet_h)
+	at = t->at[tetnum];
+	tet_inline = ft_gettetinline(t->tetriminos[tetnum]);
+	while (i < HB(t->hl[tetnum]))
 	{
-		while (j < tet_l)
+		while (j < LB(t->hl[tetnum]))
 		{
 			if (tet_inline & (1 << 15))
 			{
