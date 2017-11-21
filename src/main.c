@@ -57,6 +57,17 @@ int	main(int argc, char **argv)
 			ft_putchar('\n');
 			i++;
 		}
+		ft_putchar('\n');
+		i = 0;
+		while (i < len)
+		{
+			ft_putnbr(HB(tetris.hl[i]));
+			ft_putchar('\n');
+			ft_putnbr(LB(tetris.hl[i]));
+			ft_putchar('\n');
+			ft_putchar('\n');
+			i++;
+		}
 		free(map);
 	}
 	return (1);

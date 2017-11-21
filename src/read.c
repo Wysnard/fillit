@@ -13,7 +13,7 @@ size_t	ft_read(int fd, t_etris *tetris)
 	{
 		buf[ret] = '\0';
 		if (min > 26 || !(c = ft_standard(ft_registerbits(buf))) || ft_cttetris(buf) != 4 ||
-					!(tetris->tetriminos[min] = ft_putinchar(c)))
+					!(tetris->tetriminos[min] = ft_putinchar(c, &(tetris->hl[min]))))
 			return (0);
 		ft_print_bits(tetris->tetriminos[min], 7);
 		ft_putchar('\n');

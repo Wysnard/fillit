@@ -31,26 +31,26 @@ unsigned	char	ft_formrect(unsigned char hl, unsigned short tetris)
 	return (tet);
 }
 
-unsigned	char	ft_putinchar(unsigned short c)
+unsigned	char	ft_putinchar(unsigned short c, unsigned char *hl)
 {
-	unsigned	char	hl;
 	unsigned	char	bits;
 
 	bits = 0;
-	hl = ft_heightlength(c);
-	if ((hl >> 4) == 4)
-		bits = 5 << 5;
-	else if ((hl & 15) == 4)
-		bits = 1 << 7;
-	else if ((hl >> 4) == 3 || (hl & 15) == 3)
+	*hl = ft_heightlength(c);
+	if ((*hl >> 4) == 4)
+		bits = (5 << 5) + 0b1111;
+	else if ((*hl & 15) == 4)
+		bits = (1 << 7) + 0b1111;
+	else if ((*hl >> 4) == 3 || (*hl & 15) == 3)
 	{
-		if (!(bits = ft_formrect(hl, c)))
+		if (!(bits = ft_formrect(*hl, c)))
 			return (0);
 	}
-	else if ((hl >> 4) == 2 && (hl & 15) == 2)
-		bits = 3 << 6;
+	else if ((*hl >> 4) == 2 && (*hl & 15) == 2)
+		bits = (3 << 6) + 0b111100;
 	return (bits);
 }
+
 unsigned	char	ft_heightlength(unsigned short c)
 {
 	unsigned	char	hl;
