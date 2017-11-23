@@ -40,3 +40,18 @@ unsigned char	ft_getbitat(unsigned short byte, unsigned short at)
 	ret = ((byte >> at) & 1);
 	return (ret);
 }
+
+unsigned char	ft_getmapvallc(unsigned short *map, unsigned char lin, unsigned char col)
+{
+	return (ft_getbitat(map[lin], col));
+}
+
+unsigned char ft_getmapvalat(unsigned short *map, unsigned char where)
+{
+	return (ft_getmapvallc(map, where / 16, where % 16));
+}
+// 
+// unsigned char ft_isnotsurrounded(unsigned short *map, unsigned char where)
+// {
+// 	if (where % 16 > 0 && )
+// }

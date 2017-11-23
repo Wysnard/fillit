@@ -6,12 +6,12 @@ int	ft_fit_in(unsigned short *map, unsigned char tet, unsigned char hl, size_t a
 	unsigned char	i;
 	unsigned short	linemask;
 	unsigned short	tetline;
-	unsigned char keep_at;
 	unsigned short tet_inline;
+	unsigned short k_tet_inline;
 
 	i = 0;
-	keep_at = at;
 	tet_inline = ft_gettetinline(tet);
+	k_tet_inline = tet_inline;
 	linemask = ft_getlinemask(LB(hl));
 	while (i < HB(hl))
 	{
@@ -22,7 +22,7 @@ int	ft_fit_in(unsigned short *map, unsigned char tet, unsigned char hl, size_t a
 		i++;
 		at += 16;
 	}
-	ft_placetetris(map, tet, keep_at, hl);
+	ft_placetetris(map, k_tet_inline, at - 16 * i, hl);
 	return(1);
 }
 
@@ -31,13 +31,15 @@ int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tet
 	size_t	i;
 	unsigned	short	save[16];
 	size_t	j;
+	size_t	dc;
 
+	dc = 0;
 	if (tetris->tetriminos[tetnum] == 0)
 		return (1);
 	i = 0;
 	j = 1;
 	ft_uscpy(save, map, min);
-	while (((i / 16) + HB(tetris->hl[tetnum]) - 1) < min)
+	while ((i / 16) + HB(tetris->hl[tetnum]) < min)
 	{
 		if (((i + LB(tetris->hl[tetnum]) - 1) % 16) >= min)
 			i = 16 * (j++);

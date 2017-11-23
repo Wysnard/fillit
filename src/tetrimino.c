@@ -10,14 +10,12 @@ void	ft_bitaddtotab(unsigned short *map, unsigned short int tetrimino, size_t at
 		map[at / 16] &= ~(FIRSTBIT >> (at & 15));
 }
 
-void	ft_placetetris(unsigned short *map, unsigned char tet, unsigned char at, unsigned char hl)
+void	ft_placetetris(unsigned short *map, unsigned short tet_inline, unsigned char at, unsigned char hl)
 {
-	unsigned short	tet_inline;
 	unsigned short	linemask;
 	char	i;
 
 	i = 0;
-	tet_inline = ft_gettetinline(tet);
 	linemask = ft_getlinemask(LB(hl));
 	while (i < HB(hl))
 	{

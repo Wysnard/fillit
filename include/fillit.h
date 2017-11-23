@@ -40,7 +40,7 @@ unsigned char	ft_getbitatchar(unsigned char byte, unsigned char at);
 void ft_setbitat(unsigned short *byte, unsigned char at, unsigned char val);
 unsigned char	ft_getbitat(unsigned short byte, unsigned short at);
 int	ft_cttetris(char *buf);
-void	ft_placetetris(unsigned short *map, unsigned char tet, unsigned char at, unsigned char hl);
+void	ft_placetetris(unsigned short *map, unsigned short tet, unsigned char at, unsigned char hl);
 int	ft_isdwrtet(unsigned char tet);
 int	ft_isuprtet(unsigned char tet);
 int	ft_issqrtet(unsigned char tet);
@@ -53,5 +53,8 @@ unsigned short	ft_gettetinline(unsigned char tet);
 void ft_fillresulttab(char **tab, t_etris *t, unsigned char tetnum);
 char	**ft_initresulttab(unsigned char min);
 void	ft_print_map(unsigned short *map, unsigned char min);
+unsigned char	ft_getmapvallc(unsigned short *map, unsigned char lin, unsigned char col);
+unsigned char ft_getmapvalat(unsigned short *map, unsigned char where);
+int 	ft_isdeadrange(unsigned short where, unsigned char read, unsigned int min, unsigned short *map);
 
 #endif

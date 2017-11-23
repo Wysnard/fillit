@@ -1,0 +1,4 @@
+heuristque : fonction qui calcule max de 0 consecutifs sur une ligne de map (un short de map)
+			 fonction qui caclule envergure d' un tet avec soncode en char
+			 pour comparaison si max de 0 consecutifs < envergure, passer de ligne
+

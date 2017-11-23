@@ -21,7 +21,8 @@ SRC_NAME =  main.c \
 						tetriminos_forms.c \
 						init.c \
 						result.c \
-						fillitfuncs.c
+						fillitfuncs.c \
+						deadcells.c
 						#tests.c
 
 CC = gcc
