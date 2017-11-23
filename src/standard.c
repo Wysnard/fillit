@@ -1,29 +1,5 @@
 #include "fillit.h"
 
-unsigned	char	ft_heightlength(unsigned short c)
-{
-	unsigned	char	hl;
-	size_t	i;
-
-	i = 0;
-	hl = 0;
-	while (i < 16)
-	{
-		if (HEIGHTMASK & (c << i))
-			hl += 1;
-		i += 4;
-	}
-	hl = hl << 4;
-	i = 0;
-	while (i < 4)
-	{
-		if (LENGTHMASK & (c << i))
-			hl += 1;
-		i += 1;
-	}
-	return (hl);
-}
-
 unsigned	short	ft_standard(unsigned short c)
 {
 	if (c == 0)

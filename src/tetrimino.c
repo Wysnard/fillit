@@ -1,6 +1,4 @@
 #include "fillit.h"
-#include "libft.h"
-#include <stdio.h>
 
 void	ft_placetetris(unsigned short *map, unsigned char at, t_etris tetris, unsigned char tetnum)
 {

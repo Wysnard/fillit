@@ -34,26 +34,9 @@ unsigned	short	ft_registerbits(char *buf)
 	return (c);
 }
 
-size_t	ft_consecutive_zero(unsigned	short	*map)
+unsigned char	ft_getbitat(unsigned short byte, unsigned short at)
 {
-	size_t	j;
-	size_t	i;
-	size_t	zero;
-
-	j = 0;
-	zero = 0;
-	while ()
-	{
-		i = 0;
-		while ()
-		{
-			while ()
-			{
-				zero += 1;
-				i += 1;
-			}
-			i += 1;
-		}
-	}
-	return (i);
+	char	ret;
+	ret = ((byte >> at) & 1);
+	return (ret);
 }

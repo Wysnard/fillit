@@ -3,7 +3,6 @@
 
 int	main(int argc, char **argv)
 {
-	t_list	*list;
 	unsigned	short	*map;
 	int	fd;
 	size_t	len;
@@ -11,7 +10,6 @@ int	main(int argc, char **argv)
 	size_t	i;
 	char **resulttab;
 
-	list = NULL;
 	i = 0;
 	if (argc == 2)
 	{
