@@ -56,5 +56,8 @@ void	ft_print_map(unsigned short *map, unsigned char min);
 unsigned char	ft_getmapvallc(unsigned short *map, unsigned char lin, unsigned char col);
 unsigned char ft_getmapvalat(unsigned short *map, unsigned char where);
 int 	ft_isdeadrange(unsigned short where, unsigned char read, unsigned int min, unsigned short *map);
+unsigned char	ft_get1inbyte(unsigned short byte);
+unsigned char	ft_getenvgtet(unsigned char tet);
+unsigned char ft_getconn0inline(unsigned short line);
 
 #endif

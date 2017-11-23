@@ -31,19 +31,17 @@ int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tet
 	size_t	i;
 	unsigned	short	save[16];
 	size_t	j;
-	size_t	dc;
 
-	dc = 0;
 	if (tetris->tetriminos[tetnum] == 0)
 		return (1);
 	i = 0;
 	j = 1;
 	ft_uscpy(save, map, min);
-	while ((i / 16) + HB(tetris->hl[tetnum]) < min)
+	while (((i / 16) + HB(tetris->hl[tetnum]) - 1) < min)
 	{
-		if (((i + LB(tetris->hl[tetnum]) - 1) % 16) >= min)
+		if ((((i + LB(tetris->hl[tetnum]) - 1) % 16) >= min) || (ft_getenvgtet(tetris->hl[tetnum]) > ft_getconn0inline(map[i / 16])))
 			i = 16 * (j++);
-		if (ft_fit_in(map, tetris->tetriminos[tetnum], tetris->hl[tetnum], i))
+		if ((((i / 16) + HB(tetris->hl[tetnum]) - 1) < min) && ft_fit_in(map, tetris->tetriminos[tetnum], tetris->hl[tetnum], i))
 		{
 			tetris->at[tetnum] = i;
 			if (ft_solve(tetris, map, min, tetnum + 1))

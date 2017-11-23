@@ -22,6 +22,7 @@ int	main(int argc, char **argv)
 		if (!(map = (unsigned short *)malloc(sizeof(unsigned short) * tetris.min)))
 			return (0);
 		ft_initmap(&map, tetris.min);
+		tetris.min += 4;
 		while ((ft_solve(&tetris, map, tetris.min, 0) == 0))
 		{
 			tetris.min++;
