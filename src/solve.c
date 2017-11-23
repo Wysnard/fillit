@@ -41,11 +41,13 @@ int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tet
 	{
 		if ((((i + LB(tetris->hl[tetnum]) - 1) % 16) >= min) || (ft_getenvgtet(tetris->hl[tetnum]) > ft_getconn0inline(map[i / 16])))
 			i = 16 * (j++);
-		if ((((i / 16) + HB(tetris->hl[tetnum]) - 1) < min) && ft_fit_in(map, tetris->tetriminos[tetnum], tetris->hl[tetnum], i))
+		if (((i / 16) + HB(tetris->hl[tetnum]) - 1) < min && ft_fit_in(map, tetris->tetriminos[tetnum], tetris->hl[tetnum], i))
 		{
-			tetris->at[tetnum] = i;
 			if (ft_solve(tetris, map, min, tetnum + 1))
+			{
+				tetris->at[tetnum] = i;
 				return (1);
+			}
 			else
 				ft_uscpy(map, save, min);
 		}
