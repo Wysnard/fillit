@@ -56,5 +56,7 @@ unsigned	short	ft_createmask(size_t min);
 int	ft_compare(unsigned short *map, size_t at, t_etris tetris, unsigned char tetnum);
 int	ft_hl(unsigned short c, unsigned char *h, unsigned char *l);
 int	ft_deadcell(unsigned short *map, size_t at, unsigned char min);
+unsigned char ft_getmapvalat(unsigned short *map, unsigned short where);
+unsigned char	ft_getmapvallc(unsigned short *map, unsigned short lin, unsigned short col);
 
 #endif

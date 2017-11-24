@@ -59,6 +59,42 @@ unsigned char	ft_getbitat(unsigned short byte, unsigned short at)
 	return (ret);
 }
 
+unsigned char	ft_getmapvallc(unsigned short *map, unsigned short lin, unsigned short col)
+{
+	return (ft_getbitat(map[lin], 15 - col));
+}
+
+unsigned char ft_getmapvalat(unsigned short *map, unsigned short where)
+{
+	return (ft_getmapvallc(map, where / 16, where % 16));
+}
+
+unsigned char ft_is0next(unsigned short *map, unsigned short where)
+{
+	if (ft_getmapvalat(map, where) != 0)
+		return (0);
+	if ((where / 16) == 0)
+	{
+		if (where % 16 > 0)
+		{
+			if (ft_getmapvalat(map, where - 1) == 0)
+				return (1);
+		}
+		else
+			return (0);
+	}
+	else if (where % 16 == 0)
+	{
+		if (ft_getmapvalat(map, where - 16) == 0)
+			return (1);
+		else
+			return (0);
+	}
+	else if ((ft_getmapvalat(map, where - 16) == 0) || (ft_getmapvalat(map, where - 1) == 0))
+		return (1);
+	return (0);
+}
+
 unsigned char ft_getconn0inline(unsigned short line)
 {
 	unsigned char at;
