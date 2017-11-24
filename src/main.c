@@ -52,5 +52,5 @@ int	main(int argc, char **argv)
 		}
 		free(map);
 	}
-	return (1);
+	return (0);
 }

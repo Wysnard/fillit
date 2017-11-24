@@ -48,7 +48,10 @@ unsigned short	ft_gettetinline(unsigned char tet, unsigned char *h, unsigned cha
 void	ft_fillresulttab(char **tab, unsigned char at, unsigned char tetnum, t_etris *tetris);
 char	**ft_initresulttab(unsigned char min);
 void	ft_print_map(unsigned short *map, unsigned char min);
-
+unsigned char	ft_get1inbyte(unsigned short byte);
+unsigned char	ft_getbitat(unsigned short byte, unsigned short at);
+unsigned char ft_getconn0inline(unsigned short line);
+unsigned char	ft_getenvgtet(unsigned char tet);
 unsigned	short	ft_createmask(size_t min);
 int	ft_compare(unsigned short *map, size_t at, t_etris tetris, unsigned char tetnum);
 int	ft_hl(unsigned short c, unsigned char *h, unsigned char *l);
