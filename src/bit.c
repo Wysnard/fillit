@@ -69,28 +69,24 @@ unsigned char ft_getmapvalat(unsigned short *map, unsigned short where)
 	return (ft_getmapvallc(map, where / 16, where % 16));
 }
 
-unsigned char ft_is0next(unsigned short *map, unsigned short where)
+unsigned char gmv(unsigned short *map, unsigned short where)
 {
-	if (ft_getmapvalat(map, where) != 0)
+	return ft_getmapvalat(map, where);
+}
+
+unsigned char ft_isbegdeadrange(unsigned short *map, unsigned short where, size_t min)
+{
+	if (ft_getmapvalat(map, where) == 1)
 		return (0);
-	if ((where / 16) == 0)
-	{
-		if (where % 16 > 0)
-		{
-			if (ft_getmapvalat(map, where - 1) == 0)
-				return (1);
-		}
-		else
-			return (0);
-	}
-	else if (where % 16 == 0)
-	{
-		if (ft_getmapvalat(map, where - 16) == 0)
-			return (1);
-		else
-			return (0);
-	}
-	else if ((ft_getmapvalat(map, where - 16) == 0) || (ft_getmapvalat(map, where - 1) == 0))
+	if (!(where / 16) && !(where % 16))
+		return (1);
+	if (!(where / 16) && gmv(map, where - 1))
+		return (1);
+	if (!(where % 16) && (gmv(map ,where - 16) && (gmv(map ,where - 15) || gmv(map ,where + 1))))
+		return (1);
+	if ((where % 16 == min - 1) && (gmv(map, where - 16) && gmv(map, where - 1)))
+		return (0);
+	if (gmv(map, where - 16) && gmv(map, where - 1))
 		return (1);
 	return (0);
 }

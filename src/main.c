@@ -26,6 +26,18 @@ int	main(int argc, char **argv)
 		}
 		ft_putstr("C'est gagnee!!!\n");
 		printf("REMIN = %d\n", tetris.min);
+		//int y = 0;
+		// while (y <= 68)
+		// {
+		// 	printf("is0next pour %d : %d\n",y,ft_isbegdeadrange(map,y,tetris.min));
+		// 	if (y % 16 >= tetris.min - 1)
+		// 		y += (16 - tetris.min + 1);
+		// 	else
+		// 		y++;
+		// }
+		printf("dcs = %d\n", ft_getdcnum(map, tetris.min));
+		printf("mapvalat 50 %d\n",ft_getmapvalat(map, 50));
+		//printf("deadrange = %d\n", ft_isdeadrange(1, tetris.min, map));
 		ft_print_map(map, tetris.min);
 		if (!(resulttab = ft_initresulttab(tetris.min)))
 			return (0);

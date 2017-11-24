@@ -58,5 +58,9 @@ int	ft_hl(unsigned short c, unsigned char *h, unsigned char *l);
 int	ft_deadcell(unsigned short *map, size_t at, unsigned char min);
 unsigned char ft_getmapvalat(unsigned short *map, unsigned short where);
 unsigned char	ft_getmapvallc(unsigned short *map, unsigned short lin, unsigned short col);
+unsigned char 	ft_isdeadrange(unsigned short where, size_t min, unsigned short *map);
+unsigned char ft_isbegdeadrange(unsigned short *map, unsigned short where, size_t min);
+unsigned	short	ft_getdcnum(unsigned short *map, size_t min);
+unsigned char gmv(unsigned short *map, unsigned short where);
 
 #endif
