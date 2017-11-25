@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 14:53:06 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/25 12:03:45 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/25 22:33:33 by schmurz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ unsigned char 	ft_isdeadrange(unsigned short where, size_t min, unsigned short *
 				//printf("HFIUQHFIHQF entre dans while 1 avec where + 1 valant %d\n", where + 1);
 				where++;
 				count++;
-				if (count > 3)
+				if (count >= 3)
 				{
 					//printf("%s\n", "parti dans premier sous while");
 					return (0);
@@ -52,7 +52,7 @@ unsigned char 	ft_isdeadrange(unsigned short where, size_t min, unsigned short *
 			{
 				where--;
 				count++;
-				if (count > 3)
+				if (count >= 3)
 				{
 					//printf("%s\n", "parti dans 2e sous while");
 					return (0);

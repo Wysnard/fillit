@@ -40,6 +40,8 @@ int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tet
 	len = ft_strlen((const char*)tetris->h);
 	i = 0;
 	j = 1;
+	printf("dcs = %d\n", ft_getdcnum(map, min));
+	ft_print_map(map, min);
 	ft_uscpy(save, map, min);
 	while (((i / 16) + tetris->h[tetnum] - 1) < min)
 	{
