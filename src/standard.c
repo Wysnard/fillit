@@ -14,10 +14,12 @@ unsigned	short	ft_standard(unsigned short c)
 int	ft_hl(unsigned short c, unsigned char *h, unsigned char *l)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
 	*h = 0;
 	*l = 0;
+	j = 0;
 	while (i < 16)
 	{
 		if (HEIGHTMASK & (c << i))
@@ -28,7 +30,7 @@ int	ft_hl(unsigned short c, unsigned char *h, unsigned char *l)
 	while (i < 4)
 	{
 		if (LENGTHMASK & (c << i))
-			(*l) += 1;
+			(*l) = i + 1;
 		i += 1;
 	}
 	if (*h == 0 || *l == 0)

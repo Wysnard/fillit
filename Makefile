@@ -4,7 +4,7 @@ SRC_PATH = src/
 
 OBJ_PATH = obj/
 
-INCLUDE_PATH = include/
+INCLUDE_PATH = src/
 
 LIBFT_PATH = libft/
 
@@ -21,7 +21,6 @@ SRC_NAME =  main.c \
 						tetriminos_forms.c \
 						init.c \
 						result.c \
-						deadcell.c
 
 CC = gcc
 
@@ -40,15 +39,17 @@ $(LIBFT_PATH)libft.a:
 	make -C $(LIBFT_PATH)
 	make -C $(LIBFT_PATH) clean
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c include/fillit.h include/libft.h libft/libft.a
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c libft/libft.a
 	@mkdir -p $(OBJ_PATH)
 	$(CC) -o $@ -c $< -I$(INCLUDE_PATH) $(CFLAGS)
 
 clean:
 	rm -rf $(OBJ_PATH)
+	rm -rf $(LIBFT_PATH)$(OBJ_PATH)
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(LIBFT_PATH)libft.a
 
 re: fclean all
 

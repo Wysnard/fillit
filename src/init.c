@@ -6,11 +6,10 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 17:09:56 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/20 19:13:05 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/25 17:40:45 by vlay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fillit.h"
 
 void	ft_initmap(unsigned short *map, size_t max)

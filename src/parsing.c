@@ -1,5 +1,4 @@
-#include "libft.h"
-#include <stdio.h>
+#include "fillit.h"
 
 int	ft_cttetris(char *buf)
 {
