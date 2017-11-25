@@ -1,4 +1,5 @@
 #include "fillit.h"
+#include <stdio.h>
 
 unsigned	short	ft_createmask(size_t min)
 {
@@ -85,7 +86,7 @@ unsigned char ft_isbegdeadrange(unsigned short *map, unsigned short where, size_
 	if (!(where % 16) && (gmv(map ,where - 16) && (gmv(map ,where - 15) || gmv(map ,where + 1))))
 		return (1);
 	if ((where % 16 == min - 1) && (gmv(map, where - 16) && gmv(map, where - 1)))
-		return (0);
+		return (1);
 	if (gmv(map, where - 16) && gmv(map, where - 1))
 		return (1);
 	return (0);

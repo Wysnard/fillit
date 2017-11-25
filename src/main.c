@@ -36,7 +36,6 @@ int	main(int argc, char **argv)
 		// 		y++;
 		// }
 		printf("dcs = %d\n", ft_getdcnum(map, tetris.min));
-		printf("mapvalat 50 %d\n",ft_getmapvalat(map, 50));
 		//printf("deadrange = %d\n", ft_isdeadrange(1, tetris.min, map));
 		ft_print_map(map, tetris.min);
 		if (!(resulttab = ft_initresulttab(tetris.min)))

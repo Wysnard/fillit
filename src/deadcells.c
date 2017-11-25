@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 14:53:06 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/24 21:00:27 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/25 11:41:58 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,9 @@ unsigned	short	ft_getdcnum(unsigned short *map, size_t min)
 	{
 		if (ft_isbegdeadrange(map, i, min))
 		{
-			//printf("Un dead range a %zu\n",i);
+			printf("Un dead range a %zu\n",i);
 			ndc = ft_isdeadrange(i, min, map);
-			//printf("Cells du deadrange de %d\n",ndc);
+			printf("Cells du deadrange de %d\n",ndc);
 			dc = dc + ndc;
 		}
 		if (i % 16 >= min - 1 && (i / 16) <= min - 1)
