@@ -37,7 +37,7 @@ int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tet
 
 	if (tetris->tetris[tetnum] == 0)
 		return (1);
-	len = ft_strlen((const char*)tetris->tetris);
+	len = ft_strlen((const char*)tetris->h);
 	i = 0;
 	j = 1;
 	ft_uscpy(save, map, min);
@@ -47,16 +47,18 @@ int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tet
 			i = 16 * j++;
 		if (((i / 16) + tetris->h[tetnum] - 1) < min && ft_fit_in(map, i, *tetris, tetnum))
 		{
-			// if (min * min - ft_getdcnum(map, min) - 4 * tetnum >= 4 * (len - tetnum - 1))
+			// if ((min * min - ft_getdcnum(map, min) - 4 * tetnum) >= (4 * (len - tetnum)))
 			// {
 				if (ft_solve(tetris, map, min, tetnum + 1))
 				{
 					tetris->at[tetnum] = i;
 					return (1);
 				}
-			//}
-			else
-				ft_uscpy(map, save, min);
+				else
+					ft_uscpy(map, save, min);
+			// }
+			// else
+			// 	ft_uscpy(map, save, min);
 		}
 		if ((i - min) % 16 != 0)
 			i += 1;
