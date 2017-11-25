@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 15:52:16 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/20 19:43:48 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/25 20:34:52 by vlay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ char	**ft_initresulttab(unsigned char min)
 	return (tab);
 }
 
-void	ft_fillresulttab(char **tab, unsigned char at, unsigned char tetnum, t_etris *tetris)
+void	ft_fillresulttab(char **tab, unsigned char at,
+	unsigned char tetnum, t_etris *tetris)
 {
 	unsigned	char	i;
 	unsigned	char	j;
-	unsigned short	tet_inline;
+	unsigned	short	tet_inline;
 
 	i = 0;
 	tet_inline = tetris->tetris[tetnum];
@@ -48,7 +49,7 @@ void	ft_fillresulttab(char **tab, unsigned char at, unsigned char tetnum, t_etri
 		while (j < 4)
 		{
 			if (tet_inline & (1 << 15))
-				tab[(at / 16)+ i][(at % 16) + j] = tetnum + 'A';
+				tab[(at / 16) + i][(at % 16) + j] = tetnum + 'A';
 			tet_inline <<= 1;
 			j++;
 		}

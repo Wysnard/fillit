@@ -6,15 +6,15 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 17:09:56 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/25 17:40:45 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/25 20:59:23 by vlay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_initmap(unsigned short *map, size_t max)
+void			ft_initmap(unsigned short *map, size_t max)
 {
-	size_t			i;
+	size_t				i;
 
 	i = 0;
 	if (max == 0)
@@ -24,9 +24,10 @@ void	ft_initmap(unsigned short *map, size_t max)
 	return ;
 }
 
-unsigned short	ft_gettetinline(unsigned char tet, unsigned char *h, unsigned char *l)
+unsigned short	ft_gettetinline(unsigned char tet,
+		unsigned char *h, unsigned char *l)
 {
-	unsigned short tet_inline;
+	unsigned	short	tet_inline;
 
 	tet_inline = (unsigned short)tet;
 	if (ft_issqrtet(tet) && ft_hlassign(h, l, 2, 2))

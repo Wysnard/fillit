@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   standard.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/25 20:31:52 by vlay              #+#    #+#             */
+/*   Updated: 2017/11/25 20:32:09 by vlay             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 unsigned	short	ft_standard(unsigned short c)
@@ -11,7 +23,7 @@ unsigned	short	ft_standard(unsigned short c)
 	return (c);
 }
 
-int	ft_hl(unsigned short c, unsigned char *h, unsigned char *l)
+int					ft_hl(unsigned short c, unsigned char *h, unsigned char *l)
 {
 	size_t	i;
 	size_t	j;

@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   solve.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/25 20:53:45 by vlay              #+#    #+#             */
+/*   Updated: 2017/11/25 20:55:36 by vlay             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 #include <stdio.h>
 
-int	ft_compare(unsigned short *map, size_t at, t_etris tetris, unsigned char tetnum)
+int	ft_compare(unsigned short *map,
+		size_t at, t_etris tetris, unsigned char tetnum)
 {
 	unsigned char	i;
 	unsigned short	linemask;
@@ -20,32 +33,33 @@ int	ft_compare(unsigned short *map, size_t at, t_etris tetris, unsigned char tet
 	return (1);
 }
 
-int	ft_fit_in(unsigned short *map, size_t at, t_etris tetris, unsigned char tetnum)
+int	ft_fit_in(unsigned short *map, size_t at,
+		t_etris tetris, unsigned char tetnum)
 {
 	if (!ft_compare(map, at, tetris, tetnum))
 		return (0);
 	ft_placetetris(map, at, tetris, tetnum);
-	return(1);
+	return (1);
 }
 
-int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tetnum)
+int	ft_solve(t_etris *tetris, unsigned short *map, size_t min,
+		unsigned char tetnum)
 {
-	size_t	i;
+	size_t				i;
 	unsigned	short	save[16];
-	size_t	j;
-	unsigned	short	mask;
+	size_t				j;
 
 	if (tetris->tetris[tetnum] == 0)
 		return (1);
 	i = 0;
 	j = 1;
 	ft_uscpy(save, map, min);
-	mask = ft_createmask(min);
 	while (((i / 16) + tetris->h[tetnum] - 1) < min)
 	{
 		if (((i + tetris->l[tetnum] - 1) % 16) >= min)
 			i = 16 * j++;
-		if (((i / 16) + tetris->h[tetnum] - 1) < min && ft_fit_in(map, i, *tetris, tetnum))
+		if (((i / 16) + tetris->h[tetnum] - 1) < min &&
+				ft_fit_in(map, i, *tetris, tetnum))
 		{
 			if (ft_solve(tetris, map, min, tetnum + 1))
 			{

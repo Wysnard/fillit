@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tetrimino.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/25 20:52:56 by vlay              #+#    #+#             */
+/*   Updated: 2017/11/25 20:53:22 by vlay             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
-void	ft_placetetris(unsigned short *map, unsigned char at, t_etris tetris, unsigned char tetnum)
+void	ft_placetetris(unsigned short *map,
+		unsigned char at, t_etris tetris, unsigned char tetnum)
 {
 	unsigned	short	tet;
 

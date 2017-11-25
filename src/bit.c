@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bit.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/25 21:02:27 by vlay              #+#    #+#             */
+/*   Updated: 2017/11/25 21:02:59 by vlay             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 unsigned	short	ft_createmask(size_t min)
@@ -17,7 +29,7 @@ unsigned	short	ft_createmask(size_t min)
 unsigned	short	ft_registerbits(char *buf)
 {
 	unsigned short	c;
-	char		i;
+	char			i;
 
 	c = 0;
 	i = 15;
@@ -34,9 +46,10 @@ unsigned	short	ft_registerbits(char *buf)
 	return (c);
 }
 
-unsigned char	ft_getbitat(unsigned short byte, unsigned short at)
+unsigned	char	ft_getbitat(unsigned short byte, unsigned short at)
 {
 	char	ret;
+
 	ret = ((byte >> at) & 1);
 	return (ret);
 }
