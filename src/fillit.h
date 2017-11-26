@@ -6,7 +6,7 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:35:58 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/26 15:05:36 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/26 15:09:08 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,8 @@ unsigned char ft_isbegdeadrange(unsigned short *map, unsigned short where, size_
 unsigned char ft_isdeadrange(unsigned short where, size_t min, unsigned short *map);
 unsigned	short	ft_getdcnum(unsigned short *map, size_t min);
 
+unsigned char	ft_getenvgtet(unsigned char tet);
+unsigned char ft_getconn0inline(unsigned short line);
+unsigned char	ft_get1inbyte(unsigned short byte);
 
 #endif

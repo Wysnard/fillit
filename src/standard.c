@@ -1,6 +1,6 @@
 #include "fillit.h"
 
-unsigned	short	ft_standard(unsigned short c)
+unsigned	short	std(unsigned short c)
 {
 	if (c == 0)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 14:53:06 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/25 23:50:53 by schmurz          ###   ########.fr       */
+/*   Updated: 2017/11/26 15:10:41 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ unsigned char 	ft_isdeadrange(unsigned short where, size_t min, unsigned short *
 	count = 0;
 	lines = 0;
 	dec = 0;
-	if (ft_getmapvalat(map, where) == 1 || where % 16 >= min || where / 16 >= min)
+	if (gmv(map, where) == 1 || where % 16 >= min || where / 16 >= min)
 	{
 		//printf("%s\n", "On s' en va");
 		return (0);
@@ -47,7 +47,7 @@ unsigned char 	ft_isdeadrange(unsigned short where, size_t min, unsigned short *
 			where += dec;
 			count++;
 			//printf("lines vaut %d , where vaut %d\n",lines, where);
-			while ((where % 16 < min - 1) && ft_getmapvalat(map, where + 1) == 0)
+			while ((where % 16 < min - 1) && gmv(map, where + 1) == 0)
 			{
 				//printf("HFIUQHFIHQF entre dans while 1 avec where + 1 valant %d\n", where + 1);
 				//printf("counttt %d\n", count);
@@ -61,7 +61,7 @@ unsigned char 	ft_isdeadrange(unsigned short where, size_t min, unsigned short *
 			}
 			//printf("%s %d\n", "premier sous while passe count vaut ",count);
 			where = (keep % 16 > 0) ? (keep + lines * 16 + dec) : 0;
-			while ((where % 16 > 0) && ft_getmapvalat(map, where - 1) == 0)
+			while ((where % 16 > 0) && gmv(map, where - 1) == 0)
 			{
 				where--;
 				count++;

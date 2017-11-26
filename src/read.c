@@ -10,8 +10,8 @@ size_t	ft_read(int fd, t_etris *tetris)
 	while ((ret = read(fd, buf, BUFF_SIZE)))
 	{
 		buf[ret] = '\0';
-		if (min > 26 || !(tetris->tetris[min] = ft_standard(ft_registerbits(buf))) ||
-					ft_cttetris(buf) != 4 ||
+		if (min > 26 || !(tetris->tetris[min] = std(rb(buf))) ||
+					ctt(buf) != 4 ||
 					!(ft_hl(tetris->tetris[min], &tetris->h[min], &tetris->l[min])))
 			return (0);
 		ft_print_bits(tetris->tetris[min], 15);

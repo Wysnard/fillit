@@ -24,8 +24,8 @@ typedef	struct	s_etris
 }							t_etris;
 
 size_t	ft_read(int fd, t_etris *tetris);
-unsigned short	ft_registerbits(char *buf);
-unsigned	short	ft_standard(unsigned short c);
+unsigned short	rb(char *buf);
+unsigned	short	std(unsigned short c);
 void	ft_printtetris(unsigned char c);
 unsigned	char	ft_heightlength(unsigned short c);
 void	ft_bitaddtotab(unsigned short *map, unsigned short int tetrimino, size_t at);
@@ -34,7 +34,7 @@ int		ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char te
 unsigned	short	ft_bitsrerotate(unsigned char c);
 void	ft_tabprintbit(unsigned short *map, size_t max);
 int	ft_fit_in(unsigned short *map, size_t at, t_etris tetris, unsigned char tetnum);
-int	ft_cttetris(char *buf);
+int	ctt(char *buf);
 void	ft_placetetris(unsigned short *map, unsigned char at, t_etris tetris, unsigned char tetnum);
 int	ft_isdwrtet(unsigned char tet);
 int	ft_isuprtet(unsigned char tet);
