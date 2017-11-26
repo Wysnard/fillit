@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/26 14:04:20 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/26 16:43:37 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/26 17:29:18 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ unsigned char	ft_isdeadrange(unsigned short where, size_t min,
 	unsigned char	count;
 
 	count = 0;
-	if (gmv(map, where) == 1 || where % 16 >= min || where / 16 >= min)
+	if (gmv(map, where) == 1 || (where & 15) >= min || where / 16 >= min)
 		return (0);
 	count = ft_deadrangevert(where, min, map);
 	return (count <= 3) ? count : 0;
@@ -43,11 +43,11 @@ unsigned char	ft_deadrangevert(unsigned short where, size_t min,
 			break ;
 		where += dec;
 		count++;
-		while ((where % 16 < min - 1) && gmv(map, ++where) == 0)
+		while (((where & 15) < min - 1) && gmv(map, ++where) == 0)
 			if (count++ > 3)
 				return (0);
-		where = (k % 16 > 0) ? (k + l * 16 + dec) : 0;
-		while ((where % 16 > 0) && gmv(map, --where) == 0)
+		where = ((k & 15) > 0) ? (k + l * 16 + dec) : 0;
+		while (((where & 15) > 0) && gmv(map, --where) == 0)
 			if (count++ > 3)
 				return (0);
 		l++;
@@ -63,10 +63,10 @@ short			ft_deadrangedec(unsigned short *map, unsigned short where,
 	dec = 0;
 	if (gmv(map, where) && lines > 0)
 	{
-		if ((where % 16 < min - 1) && !gmv(map, where + 1)
+		if (((where & 15) < min - 1) && !gmv(map, where + 1)
 			&& !gmv(map, where - 15))
 			dec++;
-		else if ((where % 16 > 0) && !gmv(map, where - 1)
+		else if (((where & 15) > 0) && !gmv(map, where - 1)
 				&& !gmv(map, where - 17))
 			dec--;
 		else
@@ -86,7 +86,7 @@ unsigned short	ft_getdcnum(unsigned short *map, size_t min)
 	{
 		if (ft_isbegdeadrange(map, i, min))
 			dc = dc + ft_isdeadrange(i, min, map);
-		if (i % 16 >= min - 1 && (i / 16) <= min - 1)
+		if ((i & 15) >= min - 1 && (i / 16) <= min - 1)
 			i += (16 - min + 1);
 		else
 			i++;

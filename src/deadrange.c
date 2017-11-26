@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/26 14:00:27 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/26 16:10:47 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/26 17:33:12 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ unsigned char	ft_getmapvallc(unsigned short *map, unsigned short lin,
 
 unsigned char	gmv(unsigned short *map, unsigned short where)
 {
-	return (ft_getmapvallc(map, where / 16, where % 16));
+	return (ft_getmapvallc(map, where / 16, (where & 15)));
 }
 
 unsigned char	ft_isbegdeadrange(unsigned short *map, unsigned short where,
@@ -28,20 +28,20 @@ unsigned char	ft_isbegdeadrange(unsigned short *map, unsigned short where,
 {
 	if (gmv(map, where) == 1)
 		return (0);
-	if (!(where / 16) && !(where % 16))
+	if (!(where / 16) && !(where & 15))
 		return (1);
 	if (!(where / 16) && gmv(map, where - 1))
 		return (1);
-	if (!(where % 16) && (gmv(map, where - 16) && (gmv(map, where - 15)
+	if (!(where & 15) && (gmv(map, where - 16) && (gmv(map, where - 15)
 		|| gmv(map, where + 1))))
 		return (1);
-	if ((where % 16 == min - 1) && (gmv(map, where - 16)
+	if (((where & 15) == min - 1) && (gmv(map, where - 16)
 		&& gmv(map, where - 1)))
 		return (1);
-	if ((where % 16 == min - 2) && gmv(map, where - 16) &&
+	if (((where & 15) == min - 2) && gmv(map, where - 16) &&
 		(gmv(map, where - 15) || gmv(map, where + 1)) && gmv(map, where - 1))
 		return (1);
-	if ((where % 16 <= min - 3) && gmv(map, where - 16) &&
+	if (((where & 15) <= min - 3) && gmv(map, where - 16) &&
 		(gmv(map, where - 15) || gmv(map, where + 1)) &&
 		gmv(map, where - 1))
 	{

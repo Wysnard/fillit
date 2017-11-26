@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 15:52:16 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/26 17:02:14 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/26 17:31:07 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_fillresulttab(char **tab, unsigned char at,
 		while (j < 4)
 		{
 			if (tet_inline & (1 << 15))
-				tab[(at / 16) + i][(at % 16) + j] = tetnum + 'A';
+				tab[(at / 16) + i][(at & 15) + j] = tetnum + 'A';
 			tet_inline <<= 1;
 			j++;
 		}

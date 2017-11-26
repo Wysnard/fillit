@@ -37,8 +37,8 @@ $(NAME): $(OBJ) $(LIBFT_PATH)libft.a
 	$(CC) -o $@ $(OBJ) -L$(LIBFT_PATH) -l$(LIBFT_NAME)
 
 $(LIBFT_PATH)libft.a:
-	make -C $(LIBFT_PATH)
-	make -C $(LIBFT_PATH) clean
+	@make -C $(LIBFT_PATH)
+	@make -C $(LIBFT_PATH) clean
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c libft/libft.a
 	@mkdir -p $(OBJ_PATH)
