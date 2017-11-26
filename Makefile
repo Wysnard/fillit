@@ -21,7 +21,8 @@ SRC_NAME =  main.c \
 						init.c \
 						result.c \
 						deadrange.c \
-						deadcells.c
+						deadcells.c \
+						envg.c
 
 CC = gcc
 

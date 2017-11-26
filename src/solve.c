@@ -6,7 +6,7 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:53:45 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/26 22:43:19 by schmurz          ###   ########.fr       */
+/*   Updated: 2017/11/26 23:22:55 by schmurz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_fit_in(unsigned short *map, size_t at,
 	return (1);
 }
 
-int	ft_solve(t_etris *t, unsigned short *map, size_t min,
+int	ft_solve(t_etris *t, unsigned short *mp, size_t m,
 	unsigned char tn)
 {
 	size_t			i;
@@ -49,24 +49,24 @@ int	ft_solve(t_etris *t, unsigned short *map, size_t min,
 
 	if (t->tetris[tn] == 0)
 		return (1);
-	if ((min * min - ft_getdcnum(map, min) - 4 * tn)
+	if ((m * m - ft_getdcnum(mp, m) - 4 * tn)
 			< (4 * (ft_strlen((const char*)t->h) - tn)))
 		return (0);
 	i = 0;
-	ft_uscpy(save, map, min);
-	while (((i / 16) + t->h[tn] - 1) < min)
+	ft_uscpy(save, mp, m);
+	while (((i / 16) + t->h[tn] - 1) < m)
 	{
-		if (((i + t->l[tn] - 1) & 15) >= min)
+		if (((i + t->l[tn] - 1) & 15) >= m || ft_env(mp[i / 16], m, t->tetris[tn]))
 			i = i + 16 - (i & 15);
-		if (((i / 16) + t->h[tn] - 1) < min && ft_fit_in(map, i, *t, tn))
+		if (((i / 16) + t->h[tn] - 1) < m && ft_fit_in(mp, i, *t, tn))
 		{
 			t->at[tn] = i;
-			if (ft_solve(t, map, min, tn + 1))
+			if (ft_solve(t, mp, m, tn + 1))
 				return (1);
 			else
-				ft_uscpy(map, save, min);
+				ft_uscpy(mp, save, m);
 		}
-		i = ((i - min) & 15) ? (i + 1) : (i);
+		i = ((i - m) & 15) ? (i + 1) : (i);
 	}
 	return (0);
 }
