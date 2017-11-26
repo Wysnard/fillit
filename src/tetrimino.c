@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tetrimino.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:52:56 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/25 20:53:22 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 17:33:29 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_placetetris(unsigned short *map,
 	tet = tetris.tetris[tetnum];
 	while (tetris.h[tetnum])
 	{
-		map[at / 16] |= (tet & 0xF000) >> (at % 16);
+		map[at / 16] |= (tet & 0xF000) >> (at & 15);
 		tet = tet << 4;
 		tetris.h[tetnum] -= 1;
 		at += 16;

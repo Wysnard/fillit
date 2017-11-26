@@ -6,7 +6,7 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:53:45 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/26 17:18:49 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/26 17:30:03 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_solve(t_etris *t, unsigned short *map, size_t min,
 	ft_uscpy(save, map, min);
 	while (((i / 16) + t->h[tn] - 1) < min)
 	{
-		if (((i + t->l[tn] - 1) % 16) >= min)
+		if (((i + t->l[tn] - 1) & 15) >= min)
 			i = i + 16 - (i & 15);
 		if (((i / 16) + t->h[tn] - 1) < min && ft_fit_in(map, i, *t, tn))
 		{

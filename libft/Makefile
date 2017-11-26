@@ -49,7 +49,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_PATH)%.o: %.c libft.h
 	@mkdir -p $(OBJ_PATH)
-	gcc -o $@ -c $< -Wall -Wextra -Werror
+	@gcc -o $@ -c $< -Wall -Wextra -Werror
 
 clean:
 	rm -rf $(OBJ_PATH)
