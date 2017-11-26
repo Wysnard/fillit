@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   standard.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:31:52 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/25 20:32:09 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 14:53:32 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-unsigned	short	ft_standard(unsigned short c)
+unsigned	short	std(unsigned short c)
 {
 	if (c == 0)
 		return (0);
@@ -35,8 +35,8 @@ int					ft_hl(unsigned short c, unsigned char *h, unsigned char *l)
 	while (i < 16)
 	{
 		if (HEIGHTMASK & (c << i))
-			(*h) += 1;
-		i += 4;
+			(*h) = j;
+		i = 4 * j++;
 	}
 	i = 0;
 	while (i < 4)

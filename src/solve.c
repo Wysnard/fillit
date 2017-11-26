@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solve.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:53:45 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/25 20:55:36 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 14:15:01 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,16 @@ int	ft_fit_in(unsigned short *map, size_t at,
 int	ft_solve(t_etris *tetris, unsigned short *map, size_t min,
 		unsigned char tetnum)
 {
-	size_t				i;
+	size_t					i;
 	unsigned	short	save[16];
-	size_t				j;
+	size_t					j;
+	size_t					len;
 
 	if (tetris->tetris[tetnum] == 0)
 		return (1);
+	len = ft_strlen((const char*)tetris->h);
+	if ((min * min - ft_getdcnum(map, min) - 4 * tetnum) < (4 * (len - tetnum)))
+			return (0);
 	i = 0;
 	j = 1;
 	ft_uscpy(save, map, min);

@@ -12,7 +12,7 @@
 
 #include "fillit.h"
 
-int	ft_cttetris(char *buf)
+int	ctt(char *buf)
 {
 	size_t	i;
 	size_t	n;

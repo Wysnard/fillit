@@ -6,7 +6,7 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:35:58 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/25 22:15:56 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 14:37:23 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ typedef	struct				s_etris
 }							t_etris;
 
 size_t						ft_read(int fd, t_etris *tetris);
-unsigned short				ft_registerbits(char *buf);
-unsigned	short			ft_standard(unsigned short c);
+unsigned short				rb(char *buf);
+unsigned	short			std(unsigned short c);
 void						ft_printtetris(unsigned char c);
 unsigned	char			ft_heightlength(unsigned short c);
 void						ft_bitaddtotab(unsigned short *map,
@@ -49,11 +49,12 @@ unsigned	short			ft_bitsrerotate(unsigned char c);
 void						ft_tabprintbit(unsigned short *map, size_t max);
 int							ft_fit_in(unsigned short *map, size_t at,
 							t_etris tetris, unsigned char tetnum);
-int							ft_cttetris(char *buf);
+int							ctt(char *buf);
 void						ft_placetetris(unsigned short *map,
 							unsigned char at, t_etris tetris,
 							unsigned char tetnum);
 int							ft_isdwrtet(unsigned char tet);
+unsigned	char	ft_getbitat(unsigned short byte, unsigned short at);
 int							ft_isuprtet(unsigned char tet);
 int							ft_issqrtet(unsigned char tet);
 int							ft_isdwbtet(unsigned char tet);
@@ -75,5 +76,12 @@ int							ft_compare(unsigned short *map, size_t at,
 							t_etris tetris, unsigned char tetnum);
 int							ft_hl(unsigned short c,
 							unsigned char *h, unsigned char *l);
+
+unsigned char	ft_getmapvallc(unsigned short *map, unsigned short lin, unsigned short col);
+unsigned char gmv(unsigned short *map, unsigned short where);
+unsigned char ft_isbegdeadrange(unsigned short *map, unsigned short where, size_t min);
+unsigned char ft_isdeadrange(unsigned short where, size_t min, unsigned short *map);
+unsigned	short	ft_getdcnum(unsigned short *map, size_t min);
+
 
 #endif

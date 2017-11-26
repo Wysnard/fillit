@@ -6,7 +6,7 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:32:28 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/25 20:32:42 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 14:14:40 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_print_map(unsigned short *map, unsigned char min)
 	i = 0;
 	while (i < min)
 	{
-		ft_printnbits(map[i], 15, 15);
+		ft_printnbits(map[i], 15, min);
 		ft_putchar('\n');
 		i += 1;
 	}

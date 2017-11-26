@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bit.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 21:02:27 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/25 21:02:59 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 14:37:23 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ unsigned	short	ft_createmask(size_t min)
 	return (mask);
 }
 
-unsigned	short	ft_registerbits(char *buf)
+unsigned	short	rb(char *buf)
 {
 	unsigned short	c;
 	char			i;

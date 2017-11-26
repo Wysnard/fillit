@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 21:06:33 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/25 21:06:35 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 14:30:16 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,14 @@ int	main(int argc, char **argv)
 	{
 		if ((fd = open(argv[1], O_RDONLY)) < 0 || !(ft_read(fd, &tetris)))
 		{
-			ft_putstr_fd("Error\n", 2);
+			ft_putstr("error\n");
 			return (1);
 		}
-		printf("MIN = %d\n", tetris.min);
 		if (!(map = (unsigned short *)malloc(sizeof(unsigned short) * tetris.min)))
 			return (1);
 		ft_initmap(map, tetris.min);
 		while ((ft_solve(&tetris, map, tetris.min, 0) == 0))
-		{
-			tetris.min++;
-			ft_initmap(map, tetris.min);
-		}
-		ft_putstr("C'est gagnee!!!\n");
-		printf("REMIN = %d\n", tetris.min);
-		ft_print_map(map, tetris.min);
+			ft_initmap(map, ++tetris.min);
 		if (!(resulttab = ft_initresulttab(tetris.min)))
 			return (0);
 		i = 0;
@@ -57,17 +50,9 @@ int	main(int argc, char **argv)
 			ft_putstr(resulttab[i]);
 			i++;
 		}
-		ft_putchar('\n');
-		i = 0;
-		while (i < len)
-		{
-			ft_putnbr(tetris.at[i]);
-			ft_putchar('\n');
-			i++;
-		}
 		free(map);
 	}
 	else
-		ft_putstr_fd("usage: fillit map_file\n", 2);
+		ft_putstr("usage: fillit map_file\n");
 	return (0);
 }
