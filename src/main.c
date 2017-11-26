@@ -22,6 +22,7 @@ int	main(int argc, char **argv)
 		while ((ft_solve(&tetris, map, tetris.min, 0) == 0))
 		{
 			tetris.min++;
+			//printf("MIN CHANGE %d\n",tetris.min);
 			ft_initmap(map, tetris.min);
 		}
 		ft_putstr("C'est gagnee!!!\n");

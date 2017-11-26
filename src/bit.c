@@ -87,8 +87,21 @@ unsigned char ft_isbegdeadrange(unsigned short *map, unsigned short where, size_
 		return (1);
 	if ((where % 16 == min - 1) && (gmv(map, where - 16) && gmv(map, where - 1)))
 		return (1);
-	if (gmv(map, where - 16) && gmv(map, where - 1))
+	if ((where % 16 == min - 2) && gmv(map, where - 16) && !(!gmv(map, where - 15) && !gmv(map, where + 1)) && gmv(map, where - 1))
 		return (1);
+	if ((where % 16 <= min - 3) && gmv(map, where - 16) &&
+		!(!gmv(map, where - 15) && !gmv(map, where + 1)) &&
+		gmv(map, where - 1))
+	{
+		if (gmv(map, where - 15) && !gmv(map, where + 1))
+		{
+			if (gmv(map, where - 14))
+				return (1);
+			else
+				return (0);
+		}
+		return (1);
+	}
 	return (0);
 }
 

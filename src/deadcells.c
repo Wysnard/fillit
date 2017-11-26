@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 14:53:06 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/25 22:33:33 by schmurz          ###   ########.fr       */
+/*   Updated: 2017/11/25 23:50:53 by schmurz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ unsigned char 	ft_isdeadrange(unsigned short where, size_t min, unsigned short *
 	unsigned short keep;
 	unsigned char	count;
 	unsigned short lines;
+	unsigned short dec;
 
 	keep = where;
 	count = 0;
 	lines = 0;
+	dec = 0;
 	if (ft_getmapvalat(map, where) == 1 || where % 16 >= min || where / 16 >= min)
 	{
 		//printf("%s\n", "On s' en va");
@@ -30,29 +32,40 @@ unsigned char 	ft_isdeadrange(unsigned short where, size_t min, unsigned short *
 	else
 	{
 		//printf("%s\n", "On rentre dans le while aux whiles");
-		while ((keep / 16) + lines < min && count < 3 && ft_getmapvalat(map, keep + 16 * lines) == 0)
+		while ((keep / 16) + lines < min && count <= 3)
 		{
 			where = keep + lines * 16;
+			if (gmv(map, where) && lines > 0)
+			{
+				if ((where % 16 < min - 1) && !gmv(map, where + 1) && !gmv(map, where - 15))
+					dec++;
+				else if ((where % 16 > 0) && !gmv(map, where - 1) && !gmv(map, where - 17))
+					dec--;
+				else
+					break;
+			}
+			where += dec;
 			count++;
 			//printf("lines vaut %d , where vaut %d\n",lines, where);
 			while ((where % 16 < min - 1) && ft_getmapvalat(map, where + 1) == 0)
 			{
 				//printf("HFIUQHFIHQF entre dans while 1 avec where + 1 valant %d\n", where + 1);
+				//printf("counttt %d\n", count);
 				where++;
 				count++;
-				if (count >= 3)
+				if (count > 3)
 				{
 					//printf("%s\n", "parti dans premier sous while");
 					return (0);
 				}
 			}
 			//printf("%s %d\n", "premier sous while passe count vaut ",count);
-			where = (keep % 16 > 0) ? (keep + lines * 16) : 0;
+			where = (keep % 16 > 0) ? (keep + lines * 16 + dec) : 0;
 			while ((where % 16 > 0) && ft_getmapvalat(map, where - 1) == 0)
 			{
 				where--;
 				count++;
-				if (count >= 3)
+				if (count > 3)
 				{
 					//printf("%s\n", "parti dans 2e sous while");
 					return (0);

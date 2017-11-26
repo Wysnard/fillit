@@ -34,14 +34,22 @@ int	ft_solve(t_etris *tetris, unsigned short *map, size_t min, unsigned char tet
 	unsigned	short	save[16];
 	size_t	j;
 	size_t	len;
+	unsigned short dcs;
 
 	if (tetris->tetris[tetnum] == 0)
 		return (1);
 	len = ft_strlen((const char*)tetris->h);
+	dcs = ft_getdcnum(map, min);
+	if ((min * min - dcs - 4 * tetnum) < (4 * (len - tetnum)))
+	{
+			printf("dcs = %d\n", dcs);
+			ft_print_map(map, min);
+			return (0);
+	}
 	i = 0;
 	j = 1;
-	printf("dcs = %d\n", ft_getdcnum(map, min));
-	ft_print_map(map, min);
+	// printf("dcs = %d\n", ft_getdcnum(map, min));
+	// ft_print_map(map, min);
 	ft_uscpy(save, map, min);
 	while (((i / 16) + tetris->h[tetnum] - 1) < min)
 	{
