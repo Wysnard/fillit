@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solve.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:53:45 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/25 20:55:36 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 17:18:49 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,35 +42,32 @@ int	ft_fit_in(unsigned short *map, size_t at,
 	return (1);
 }
 
-int	ft_solve(t_etris *tetris, unsigned short *map, size_t min,
-		unsigned char tetnum)
+int	ft_solve(t_etris *t, unsigned short *map, size_t min,
+	unsigned char tn)
 {
-	size_t				i;
-	unsigned	short	save[16];
-	size_t				j;
+	size_t			i;
+	unsigned short	save[16];
 
-	if (tetris->tetris[tetnum] == 0)
+	if (t->tetris[tn] == 0)
 		return (1);
+	if ((min * min - ft_getdcnum(map, min) - 4 * tn)
+			< (4 * (ft_strlen((const char*)t->h - tn))))
+		return (0);
 	i = 0;
-	j = 1;
 	ft_uscpy(save, map, min);
-	while (((i / 16) + tetris->h[tetnum] - 1) < min)
+	while (((i / 16) + t->h[tn] - 1) < min)
 	{
-		if (((i + tetris->l[tetnum] - 1) % 16) >= min)
-			i = 16 * j++;
-		if (((i / 16) + tetris->h[tetnum] - 1) < min &&
-				ft_fit_in(map, i, *tetris, tetnum))
+		if (((i + t->l[tn] - 1) % 16) >= min)
+			i = i + 16 - (i & 15);
+		if (((i / 16) + t->h[tn] - 1) < min && ft_fit_in(map, i, *t, tn))
 		{
-			if (ft_solve(tetris, map, min, tetnum + 1))
-			{
-				tetris->at[tetnum] = i;
+			t->at[tn] = i;
+			if (ft_solve(t, map, min, tn + 1))
 				return (1);
-			}
 			else
 				ft_uscpy(map, save, min);
 		}
-		if ((i - min) % 16 != 0)
-			i += 1;
+		i = ((i - min) & 15) ? (i + 1) : (i);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vlay <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 16:05:05 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/10 16:05:23 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 17:20:40 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_bits(unsigned long long int octet, size_t size)
 {
-	size_t									i;
+	size_t					i;
 	unsigned long long int	oct;
 
 	if (size == 0)

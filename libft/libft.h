@@ -6,7 +6,7 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 17:06:53 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/20 14:00:45 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 17:22:23 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,9 +143,7 @@ void				ft_swap(void **s1, void **s2);
 size_t				ft_sqr(int	nb);
 void				ft_printnbits(unsigned long long int octet,
 						size_t size, size_t len);
-unsigned short		*ft_uscpy(unsigned short *dest, unsigned short *src, size_t len);
-unsigned short 		ft_bitrotl(unsigned short value, int shift);
-unsigned short 		ft_bitrotr(unsigned short value, int shift);
-void					ft_tabdel(char **tab);
+unsigned short		*ft_uscpy(unsigned short *dest, unsigned short *src,
+					size_t len);
 
 #endif

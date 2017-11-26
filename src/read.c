@@ -6,39 +6,36 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 19:32:22 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/25 20:30:57 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 14:59:09 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include <stdio.h>
 
-size_t	ft_read(int fd, t_etris *tetris)
+size_t	ft_read(int fd, t_etris *t)
 {
-	int		ret;
-	size_t	min;
-	char	buf[BUFF_SIZE + 1];
+	int		r;
+	size_t	m;
+	char	b[BUFF_SIZE + 1];
 
-	min = 0;
-	while ((ret = read(fd, buf, BUFF_SIZE)))
+	m = 0;
+	b[0] = '\0';
+	while ((r = read(fd, b, BUFF_SIZE)))
 	{
-		buf[ret] = '\0';
-		if (min > 26 ||
-		!(tetris->tetris[min] = ft_standard(ft_registerbits(buf))) ||
-		ft_cttetris(buf) != 4 ||
-		!(ft_hl(tetris->tetris[min], &tetris->h[min], &tetris->l[min]))
-		|| (tetris->h[min] + tetris->l[min] != 5 &&
-		tetris->h[min] + tetris->l[min] != 4))
+		b[r] = '\0';
+		if (m > 26 || !(t->tetris[m] = stdr(rb(b))) || ctt(b) != 4 ||
+		!(ft_hl(t->tetris[m], &t->h[m], &t->l[m])) || (t->h[m] + t->l[m] != 5 &&
+		t->h[m] + t->l[m] != 4))
 			return (0);
-		printf("h = %d | l = %d\n", tetris->h[min], tetris->l[min]);
-		ft_print_bits(tetris->tetris[min], 15);
-		ft_putchar('\n');
-		min++;
+		m++;
 	}
-	tetris->tetris[min] = 0;
-	tetris->h[min] = 0;
-	tetris->l[min] = 0;
-	ft_bzero(tetris->at, 27);
-	tetris->nb = (unsigned char)min;
-	return (tetris->min = (min < 2) ? 2 : ft_sqr(min * 4));
+	if (m == 0 || ft_strlen(b) != 20)
+		return (t->min = 0);
+	t->tetris[m] = 0;
+	t->h[m] = 0;
+	t->l[m] = 0;
+	ft_bzero(t->at, 27);
+	t->nb = (unsigned char)m;
+	return (t->min = (m < 2) ? 2 : ft_sqr(m * 4));
 }
