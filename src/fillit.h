@@ -6,13 +6,14 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:35:58 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/26 14:37:23 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/26 17:00:51 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
 # define BUFF_SIZE 21
+# define DEG_JUMP 0x8080
 # define LENGTHMASK 0x8888
 # define HEIGHTMASK 61440
 # define FIRSTBIT 32768
@@ -37,7 +38,10 @@ typedef	struct				s_etris
 
 size_t						ft_read(int fd, t_etris *tetris);
 unsigned short				rb(char *buf);
-unsigned	short			std(unsigned short c);
+unsigned short				stdr(unsigned short c);
+unsigned char				ft_checkjumps(unsigned short c, unsigned char h,
+							unsigned char l);
+
 void						ft_printtetris(unsigned char c);
 unsigned	char			ft_heightlength(unsigned short c);
 void						ft_bitaddtotab(unsigned short *map,
@@ -53,14 +57,7 @@ int							ctt(char *buf);
 void						ft_placetetris(unsigned short *map,
 							unsigned char at, t_etris tetris,
 							unsigned char tetnum);
-int							ft_isdwrtet(unsigned char tet);
-unsigned	char	ft_getbitat(unsigned short byte, unsigned short at);
-int							ft_isuprtet(unsigned char tet);
-int							ft_issqrtet(unsigned char tet);
-int							ft_isdwbtet(unsigned char tet);
-int							ft_isupbtet(unsigned char tet);
-int							ft_hlassign(unsigned char *h, unsigned char *l,
-							char val_h, char val_l);
+unsigned	char			ft_getbitat(unsigned short byte, unsigned short at);
 unsigned	short			ft_getlinemask(char l);
 void						ft_initmap(unsigned short *map, size_t max);
 unsigned	short			ft_gettetinline(unsigned char tet,
@@ -70,6 +67,7 @@ void						ft_fillresulttab(char **tab, unsigned char at,
 char						**ft_initresulttab(unsigned char min);
 void						ft_print_map(unsigned short *map,
 							unsigned char min);
+char						ft_printresulttab(t_etris *tetris);
 
 unsigned	short			ft_createmask(size_t min);
 int							ft_compare(unsigned short *map, size_t at,
@@ -77,11 +75,18 @@ int							ft_compare(unsigned short *map, size_t at,
 int							ft_hl(unsigned short c,
 							unsigned char *h, unsigned char *l);
 
-unsigned char	ft_getmapvallc(unsigned short *map, unsigned short lin, unsigned short col);
-unsigned char gmv(unsigned short *map, unsigned short where);
-unsigned char ft_isbegdeadrange(unsigned short *map, unsigned short where, size_t min);
-unsigned char ft_isdeadrange(unsigned short where, size_t min, unsigned short *map);
-unsigned	short	ft_getdcnum(unsigned short *map, size_t min);
-
+unsigned	char			ft_getmapvallc(unsigned short *map,
+							unsigned short lin, unsigned short col);
+unsigned	char			gmv(unsigned short *map, unsigned short where);
+unsigned	char			ft_isbegdeadrange(unsigned short *map,
+							unsigned short where, size_t min);
+unsigned	char			ft_isdeadrange(unsigned short where, size_t min,
+							unsigned short *map);
+unsigned	short			ft_getdcnum(unsigned short *map, size_t min);
+unsigned	char			ft_deadrangevert(unsigned short where, size_t min,
+							unsigned short *map);
+short						ft_deadrangedec(unsigned short *map,
+							unsigned short where, unsigned short lines,
+							size_t min);
 
 #endif

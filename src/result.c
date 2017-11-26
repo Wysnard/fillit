@@ -6,7 +6,7 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 15:52:16 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/25 20:34:52 by vlay             ###   ########.fr       */
+/*   Updated: 2017/11/26 17:02:14 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,30 @@ void	ft_fillresulttab(char **tab, unsigned char at,
 		}
 		i++;
 	}
+}
+
+char	ft_printresulttab(t_etris *tetris)
+{
+	char	**resulttab;
+	size_t	i;
+	size_t	len;
+
+	if (!(resulttab = ft_initresulttab(tetris->min)))
+		return (0);
+	i = 0;
+	len = ft_strlen((const char*)tetris->h);
+	while (i < len)
+	{
+		ft_fillresulttab(resulttab, tetris->at[i], i, tetris);
+		i += 1;
+	}
+	i = 0;
+	while (i < tetris->min)
+	{
+		ft_putstr(resulttab[i]);
+		free(resulttab[i]);
+		i++;
+	}
+	free(resulttab);
+	return (1);
 }

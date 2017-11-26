@@ -24,7 +24,7 @@ size_t	ft_read(int fd, t_etris *t)
 	while ((r = read(fd, b, BUFF_SIZE)))
 	{
 		b[r] = '\0';
-		if (m > 26 || !(t->tetris[m] = std(rb(b))) || ctt(b) != 4 ||
+		if (m > 26 || !(t->tetris[m] = stdr(rb(b))) || ctt(b) != 4 ||
 		!(ft_hl(t->tetris[m], &t->h[m], &t->l[m])) || (t->h[m] + t->l[m] != 5 &&
 		t->h[m] + t->l[m] != 4))
 			return (0);

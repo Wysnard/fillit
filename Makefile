@@ -18,7 +18,6 @@ SRC_NAME =  main.c \
 						solve.c \
 						print.c \
 						parsing.c \
-						tetriminos_forms.c \
 						init.c \
 						result.c \
 						deadrange.c \
