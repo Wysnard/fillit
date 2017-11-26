@@ -6,12 +6,11 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:53:45 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/26 22:05:21 by schmurz          ###   ########.fr       */
+/*   Updated: 2017/11/26 22:43:19 by schmurz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 int	ft_compare(unsigned short *map,
 		size_t at, t_etris tetris, unsigned char tetnum)

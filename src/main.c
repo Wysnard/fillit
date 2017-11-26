@@ -6,12 +6,11 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 21:06:33 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/26 16:56:37 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/26 22:42:49 by schmurz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {

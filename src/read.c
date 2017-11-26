@@ -6,12 +6,11 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 19:32:22 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/26 14:59:09 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/26 22:42:59 by schmurz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 size_t	ft_read(int fd, t_etris *t)
 {

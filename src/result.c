@@ -6,12 +6,11 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 15:52:16 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/26 17:31:07 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/26 22:43:06 by schmurz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 char	**ft_initresulttab(unsigned char min)
 {

@@ -6,12 +6,11 @@
 /*   By: dsaadia <dsaadia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/26 14:04:20 by dsaadia           #+#    #+#             */
-/*   Updated: 2017/11/26 17:29:18 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/26 22:42:41 by schmurz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 unsigned char	ft_isdeadrange(unsigned short where, size_t min,
 				unsigned short *map)
