@@ -6,7 +6,7 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:53:45 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/26 17:30:03 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/11/26 22:05:21 by schmurz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_solve(t_etris *t, unsigned short *map, size_t min,
 	if (t->tetris[tn] == 0)
 		return (1);
 	if ((min * min - ft_getdcnum(map, min) - 4 * tn)
-			< (4 * (ft_strlen((const char*)t->h - tn))))
+			< (4 * (ft_strlen((const char*)t->h) - tn)))
 		return (0);
 	i = 0;
 	ft_uscpy(save, map, min);
