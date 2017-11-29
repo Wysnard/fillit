@@ -23,15 +23,15 @@ size_t	ft_read(int fd, t_etris *t)
 	while ((r = read(fd, b, BUFF_SIZE)))
 	{
 		b[r] = '\0';
-		if (m > 26 || !(t->tetris[m] = stdr(rb(b))) || ctt(b) != 4 ||
-		!(ft_hl(t->tetris[m], &t->h[m], &t->l[m])) || (t->h[m] + t->l[m] != 5 &&
+		if (m > 26 || !(t->tet[m] = stdr(rb(b))) || ctt(b) != 4 ||
+		!(ft_hl(t->tet[m], &t->h[m], &t->l[m])) || (t->h[m] + t->l[m] != 5 &&
 		t->h[m] + t->l[m] != 4))
 			return (0);
 		m++;
 	}
 	if (m == 0 || ft_strlen(b) != 20)
 		return (t->min = 0);
-	t->tetris[m] = 0;
+	t->tet[m] = 0;
 	t->h[m] = 0;
 	t->l[m] = 0;
 	ft_bzero(t->at, 27);

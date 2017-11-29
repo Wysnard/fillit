@@ -17,7 +17,7 @@ void	ft_placetetris(unsigned short *map,
 {
 	unsigned	short	tet;
 
-	tet = tetris.tetris[tetnum];
+	tet = tetris.tet[tetnum];
 	while (tetris.h[tetnum])
 	{
 		map[at / 16] |= (tet & 0xF000) >> (at & 15);

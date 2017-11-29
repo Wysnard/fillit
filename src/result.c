@@ -41,7 +41,7 @@ void	ft_fillresulttab(char **tab, unsigned char at,
 	unsigned	short	tet_inline;
 
 	i = 0;
-	tet_inline = tetris->tetris[tetnum];
+	tet_inline = tetris->tet[tetnum];
 	while (i < tetris->h[tetnum])
 	{
 		j = 0;

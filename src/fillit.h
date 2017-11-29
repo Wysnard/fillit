@@ -6,7 +6,7 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:35:58 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/26 23:23:11 by schmurz          ###   ########.fr       */
+/*   Updated: 2017/11/29 11:42:12 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 
 typedef	struct				s_etris
 {
-	unsigned	short		tetris[27];
+	unsigned	short		tet[27];
 	unsigned	char		min;
 	unsigned	char		nb;
 	unsigned	char		at[27];
@@ -89,8 +89,9 @@ short						ft_deadrangedec(unsigned short *map,
 							unsigned short where, unsigned short lines,
 							size_t min);
 
-unsigned char		ft_co0inline(unsigned short line, size_t min);
-unsigned char		ft_get1s(unsigned short byte);
-unsigned char		ft_env(unsigned short line, size_t min, unsigned short tet);
+unsigned char				ft_co0inline(unsigned short line, size_t min);
+unsigned char				ft_get1s(unsigned short byte);
+unsigned char				ft_env(unsigned short line, size_t min,
+							unsigned short tet);
 
 #endif
