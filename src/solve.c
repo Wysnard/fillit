@@ -6,11 +6,12 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:53:45 by vlay              #+#    #+#             */
-/*   Updated: 2017/11/29 11:42:24 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/12/02 15:05:16 by vlay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
 int	ft_compare(unsigned short *map,
 		size_t at, t_etris tetris, unsigned char tetnum)
@@ -50,7 +51,7 @@ int	ft_solve(t_etris *t, unsigned short *p, size_t m,
 	if (t->tet[n] == 0)
 		return (1);
 	if ((m * m - ft_getdcnum(p, m) - 4 * n)
-			< (4 * (ft_strlen((const char*)t->h) - n)))
+	< (4 * (ft_strlen((const char*)t->h) - n)) || t->l[n] > m || t->h[n] > m)
 		return (0);
 	i = 0;
 	ft_uscpy(save, p, m);
