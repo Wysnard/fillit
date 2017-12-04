@@ -6,7 +6,7 @@
 /*   By: vlay <vlay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 20:53:45 by vlay              #+#    #+#             */
-/*   Updated: 2017/12/02 15:13:16 by dsaadia          ###   ########.fr       */
+/*   Updated: 2017/12/04 16:41:02 by dsaadia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,13 @@ int	ft_solve(t_etris *t, unsigned short *p, size_t m,
 
 	if (t->tet[n] == 0)
 		return (1);
-	if ((m * m - ft_getdcnum(p, m) - 4 * n)
-	< (4 * (ft_strlen((const char*)t->h) - n)) || t->l[n] > m || t->h[n] > m)
+	if (t->l[n] > m || t->h[n] > m)
 		return (0);
 	i = 0;
 	ft_uscpy(save, p, m);
 	while (((i / 16) + t->h[n] - 1) < m)
 	{
-		if (((i + t->l[n] - 1) & 15) >= m || ft_env(p[i / 16], m, t->tet[n]))
+		if (((i + t->l[n] - 1) & 15) >= m)
 			i = i + 16 - (i & 15);
 		if (((i / 16) + t->h[n] - 1) < m && ft_fit_in(p, i, *t, n))
 		{
